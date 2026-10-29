@@ -1,0 +1,4 @@
+opencv-python>=4.8
+Pillow>=10
+requests>=2.31
+parth-dl==1.2.1

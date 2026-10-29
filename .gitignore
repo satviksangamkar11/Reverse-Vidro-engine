@@ -1,0 +1,19 @@
+# never commit secrets, media or generated frames
+.env
+*.env
+secrets/
+*key*.txt
+__pycache__/
+*.pyc
+.venv/
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.zip
+*.wav
+selected_frames/
+raw_responses/
+stage/
+*.log
+*.bak*
