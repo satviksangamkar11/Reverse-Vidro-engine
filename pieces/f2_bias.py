@@ -96,6 +96,8 @@ def tag_video(meta: VideoMeta) -> VideoTags:
         pacing_band = None  # Missing data signal
     elif isinstance(cuts, (int, float)) and (not math.isfinite(cuts) or cuts < 0):
         pacing_band = None  # Negative or non-finite cuts treated as missing
+    elif isinstance(duration, (int, float)) and not math.isfinite(duration):
+        pacing_band = None  # Non-finite duration treated as missing
 
     # Creator ID
     creator_id = meta.get("creator_id", "UNKNOWN")

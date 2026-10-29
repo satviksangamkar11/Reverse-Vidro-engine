@@ -96,7 +96,7 @@ class TestBlindPairs(unittest.TestCase):
         results_b = [{"scene_id": ["unhashable"], "plan": "b1"}, {"scene_id": "s2", "plan": "b2"}]
         result = blind_pairs(results_a, results_b, seed=42)
         self.assertEqual(result["status"], "error")
-        self.assertIn("scene_id must be hashable", result["error"])
+        self.assertIn("scene_id must be a string", result["error"])
 
     def test_blind_pairs_seed42_matches_spec_example(self):
         """Test that seed=42 produces the exact assignment from the spec worked example."""
