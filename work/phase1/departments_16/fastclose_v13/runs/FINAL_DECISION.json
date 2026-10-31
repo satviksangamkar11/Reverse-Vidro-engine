@@ -1,0 +1,380 @@
+{
+ "key": {
+  "S3": {
+   "A": "P2",
+   "B": "P1"
+  },
+  "S6": {
+   "A": "P2",
+   "B": "P1"
+  },
+  "S8": {
+   "A": "P2",
+   "B": "P1"
+  }
+ },
+ "opus": {
+  "primary": {
+   "per_scene": {
+    "S3": "A",
+    "S6": "B",
+    "S8": "A"
+   },
+   "verdict": "A_BETTER"
+  },
+  "sensitivity_Q1Q2Q5Q6": {
+   "per_scene": {
+    "S3": "A",
+    "S6": "B",
+    "S8": "A"
+   },
+   "verdict": "A_BETTER"
+  },
+  "per_scene": {
+   "S3": {
+    "B": {
+     "total": 22,
+     "Q1Q2Q5Q6": 16,
+     "Q5": 4
+    },
+    "A": {
+     "total": 23,
+     "Q1Q2Q5Q6": 16,
+     "Q5": 4
+    },
+    "preferred_arm": "A"
+   },
+   "S6": {
+    "B": {
+     "total": 23,
+     "Q1Q2Q5Q6": 16,
+     "Q5": 4
+    },
+    "A": {
+     "total": 22,
+     "Q1Q2Q5Q6": 14,
+     "Q5": 3
+    },
+    "preferred_arm": "B"
+   },
+   "S8": {
+    "B": {
+     "total": 23,
+     "Q1Q2Q5Q6": 15,
+     "Q5": 3
+    },
+    "A": {
+     "total": 25,
+     "Q1Q2Q5Q6": 17,
+     "Q5": 4
+    },
+    "preferred_arm": "A"
+   }
+  }
+ },
+ "gemini": {
+  "primary": {
+   "per_scene": {
+    "S3": "A",
+    "S6": "B",
+    "S8": "A"
+   },
+   "verdict": "A_BETTER"
+  },
+  "sensitivity_Q1Q2Q5Q6": {
+   "per_scene": {
+    "S3": "A",
+    "S6": "B",
+    "S8": "A"
+   },
+   "verdict": "A_BETTER"
+  },
+  "per_scene": {
+   "S3": {
+    "B": {
+     "total": 25,
+     "Q1Q2Q5Q6": 19,
+     "Q5": 5
+    },
+    "A": {
+     "total": 30,
+     "Q1Q2Q5Q6": 20,
+     "Q5": 5
+    },
+    "preferred_arm": "A"
+   },
+   "S6": {
+    "B": {
+     "total": 29,
+     "Q1Q2Q5Q6": 19,
+     "Q5": 4
+    },
+    "A": {
+     "total": 18,
+     "Q1Q2Q5Q6": 12,
+     "Q5": 3
+    },
+    "preferred_arm": "B"
+   },
+   "S8": {
+    "B": {
+     "total": 27,
+     "Q1Q2Q5Q6": 19,
+     "Q5": 5
+    },
+    "A": {
+     "total": 29,
+     "Q1Q2Q5Q6": 20,
+     "Q5": 5
+    },
+    "preferred_arm": "A"
+   }
+  }
+ },
+ "facts": {
+  "S3": {
+   "A": {
+    "validator_result": "UNREVIEWED",
+    "validator_errors": 0,
+    "warnings": 8,
+    "staging_warnings": 8,
+    "need_new": 0,
+    "flat_compatible_share": 0.333,
+    "images_needed": 11
+   },
+   "B": {
+    "validator_result": "INVALID",
+    "validator_errors": 1,
+    "warnings": 4,
+    "staging_warnings": 4,
+    "need_new": 0,
+    "flat_compatible_share": 0.333,
+    "images_needed": 10
+   }
+  },
+  "S6": {
+   "A": {
+    "validator_result": "UNREVIEWED",
+    "validator_errors": 0,
+    "warnings": 13,
+    "staging_warnings": 13,
+    "need_new": 0,
+    "flat_compatible_share": 0.333,
+    "images_needed": 15
+   },
+   "B": {
+    "validator_result": "UNREVIEWED",
+    "validator_errors": 0,
+    "warnings": 11,
+    "staging_warnings": 11,
+    "need_new": 0,
+    "flat_compatible_share": 0.167,
+    "images_needed": 11
+   }
+  },
+  "S8": {
+   "A": {
+    "validator_result": "UNREVIEWED",
+    "validator_errors": 0,
+    "warnings": 8,
+    "staging_warnings": 8,
+    "need_new": 0,
+    "flat_compatible_share": 0.4,
+    "images_needed": 9
+   },
+   "B": {
+    "validator_result": "UNREVIEWED",
+    "validator_errors": 0,
+    "warnings": 2,
+    "staging_warnings": 2,
+    "need_new": 0,
+    "flat_compatible_share": 0.2,
+    "images_needed": 10
+   }
+  }
+ },
+ "compliance": {
+  "A_S3": {
+   "computable": true,
+   "C1_opening": {
+    "first_preset": "01_establishing_shot",
+    "first_shot_source_cited": true
+   },
+   "C2_camera": {
+    "shots": 6,
+    "distinct_presets": 4,
+    "same_preset_consecutive_pairs": 0,
+    "strong_consecutive_pairs": 1
+   },
+   "C3_reaction": {
+    "turn_ovi": "A1:102",
+    "turn_shot_has_ovi_pose": false,
+    "narrator_mentions": 5
+   },
+   "C4_progression": {
+    "invalid_transitions": 0,
+    "unknown_presets": 0,
+    "need_new": 0,
+    "closeup_on_turn": false
+   },
+   "C5_quiet": {
+    "visual_only_gains": [
+     0.2
+    ],
+    "quiet_strong_pushes": 1
+   }
+  },
+  "B_S3": {
+   "computable": true,
+   "C1_opening": {
+    "first_preset": "02_environmental_parallax",
+    "first_shot_source_cited": true
+   },
+   "C2_camera": {
+    "shots": 6,
+    "distinct_presets": 3,
+    "same_preset_consecutive_pairs": 1,
+    "strong_consecutive_pairs": 1
+   },
+   "C3_reaction": {
+    "turn_ovi": "A1:102",
+    "turn_shot_has_ovi_pose": false,
+    "narrator_mentions": 4
+   },
+   "C4_progression": {
+    "invalid_transitions": 0,
+    "unknown_presets": 0,
+    "need_new": 0,
+    "closeup_on_turn": false
+   },
+   "C5_quiet": {
+    "visual_only_gains": [
+     0.28
+    ],
+    "quiet_strong_pushes": 1
+   }
+  },
+  "B_S6": {
+   "computable": true,
+   "C1_opening": {
+    "first_preset": "01_establishing_shot",
+    "first_shot_source_cited": true
+   },
+   "C2_camera": {
+    "shots": 6,
+    "distinct_presets": 5,
+    "same_preset_consecutive_pairs": 0,
+    "strong_consecutive_pairs": 0
+   },
+   "C3_reaction": {
+    "turn_ovi": "A1:121",
+    "turn_shot_has_ovi_pose": false,
+    "narrator_mentions": 1
+   },
+   "C4_progression": {
+    "invalid_transitions": 0,
+    "unknown_presets": 0,
+    "need_new": 0,
+    "closeup_on_turn": false
+   },
+   "C5_quiet": {
+    "visual_only_gains": [
+     0.14,
+     0.28
+    ],
+    "quiet_strong_pushes": 1
+   }
+  },
+  "A_S6": {
+   "computable": true,
+   "C1_opening": {
+    "first_preset": "01_establishing_shot",
+    "first_shot_source_cited": true
+   },
+   "C2_camera": {
+    "shots": 6,
+    "distinct_presets": 3,
+    "same_preset_consecutive_pairs": 1,
+    "strong_consecutive_pairs": 3
+   },
+   "C3_reaction": {
+    "turn_ovi": "A1:121",
+    "turn_shot_has_ovi_pose": false,
+    "narrator_mentions": 4
+   },
+   "C4_progression": {
+    "invalid_transitions": 0,
+    "unknown_presets": 0,
+    "need_new": 0,
+    "closeup_on_turn": false
+   },
+   "C5_quiet": {
+    "visual_only_gains": [
+     0.2,
+     0.28
+    ],
+    "quiet_strong_pushes": 2
+   }
+  },
+  "A_S8": {
+   "computable": true,
+   "C1_opening": {
+    "first_preset": "01_establishing_shot",
+    "first_shot_source_cited": true
+   },
+   "C2_camera": {
+    "shots": 5,
+    "distinct_presets": 4,
+    "same_preset_consecutive_pairs": 0,
+    "strong_consecutive_pairs": 0
+   },
+   "C3_reaction": {
+    "turn_ovi": "A1:137",
+    "turn_shot_has_ovi_pose": false,
+    "narrator_mentions": 2
+   },
+   "C4_progression": {
+    "invalid_transitions": 0,
+    "unknown_presets": 0,
+    "need_new": 0,
+    "closeup_on_turn": true
+   },
+   "C5_quiet": {
+    "visual_only_gains": [
+     0.2
+    ],
+    "quiet_strong_pushes": 1
+   }
+  },
+  "B_S8": {
+   "computable": true,
+   "C1_opening": {
+    "first_preset": "01_establishing_shot",
+    "first_shot_source_cited": true
+   },
+   "C2_camera": {
+    "shots": 5,
+    "distinct_presets": 4,
+    "same_preset_consecutive_pairs": 0,
+    "strong_consecutive_pairs": 0
+   },
+   "C3_reaction": {
+    "turn_ovi": "A1:136",
+    "turn_shot_has_ovi_pose": false,
+    "narrator_mentions": 3
+   },
+   "C4_progression": {
+    "invalid_transitions": 0,
+    "unknown_presets": 0,
+    "need_new": 0,
+    "closeup_on_turn": false
+   },
+   "C5_quiet": {
+    "visual_only_gains": [
+     0.13
+    ],
+    "quiet_strong_pushes": 0
+   }
+  }
+ }
+}

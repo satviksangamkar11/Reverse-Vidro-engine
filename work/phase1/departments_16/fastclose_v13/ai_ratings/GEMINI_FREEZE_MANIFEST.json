@@ -1,0 +1,8 @@
+{
+ "rater": "Gemini (AI evaluator, supplied by the owner); AI-assisted, NOT the owner's human rating",
+ "received": "2026-11-01, pasted in chat",
+ "frozen_before_key_opened": true,
+ "sha256": {
+  "GEMINI_BLIND_RATING_SHEET.csv": "bd804a954fe9b6d2f6cd3e50915a5a6d2b291ab57f03e7db15524af844115cae"
+ }
+}
