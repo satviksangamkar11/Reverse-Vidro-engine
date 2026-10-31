@@ -25,3 +25,22 @@ These are human observations by the owner for the items above only. They do not 
 - The owner stated he cross-checked and approved the pasted analysis (PASTED_ANALYSIS_2026-10-31_UNCONFIRMED.md), which gives story function, scene purpose, shot type and reveal for 13 scenes of the full video.
 - OPEN CONFLICT (not resolved by the approval): the owner's own B03 and B04 answers say "zoom in", and B06 says "camera moves to right". The approved analysis says there is no push-in before about 11 s and only distance changes. One answer per item is needed for B03, B04 and B06.
 - B08, B09 and B10 still have no item-level answer; the approved scene table covers 9-13 s (scene 3) at scene level only.
+
+## Update 2026-10-31 (owner-provided analysis, pasted with the request to update the answers)
+Source: an analysis pasted by the owner, which the owner asked to be recorded. It is recorded as the owner's direction for these items; it was not signed. Earlier "zoom in" answers are kept and extended.
+
+| Item | Zoom in | Camera move right | Recorded answer |
+|---|---|---|---|
+| B03 (1.0–2.5 s) | YES, slow steady zoom-in | NO pan; right-side drift comes from the zoom | CORRECT: zoom in; no pan |
+| B04 (3.0–4.5 s) | YES, same zoom continues | NO pan | CORRECT: zoom in; no pan |
+| B06 (5.0–8.5 s) | YES, new slow zoom-in after the cut at 4.93 s | NO pan. Kacha walks to the right; the camera does not | CORRECT: zoom in; Kacha walks right |
+
+Other notes from the same analysis: real cuts in the first 13 s at 4.93 s and about 12.9 s; fade at about 8.97 s; the sparks at 2.93 s and 3.83 s are not cuts; a strong zoom from about 11.7 to 12.8 s at "Marry me." (not "slight").
+
+| Item | Recorded answer |
+|---|---|
+| B08 (9.0 s, single frame) | CORRECT: wide / full shot (Kacha head to toe, far right); dimmed by a fade, so part of a transition. Story function and scene purpose UNKNOWN; reveal UNKNOWN in the picture (subtitle names Devayani, not yet on screen). |
+| B09 (9.5–11.0 s) | CORRECT: Devayani walks in from the left with her arm already held out; Kacha still; wide / full with slow zoom-in running; reveal YES (Devayani enters); "escalation" is acceptable. |
+| B10 (9.5–12.5 s) | CORRECT: the red forehead mark is already visible at 9.0 s, so it is not gained; her arm stays held out; wide / full, zooming to medium from about 11.7 s, back to wide at about 12.9 s; reveal YES (the proposal, "Your vow is over. Marry me."); escalation accepted. |
+
+Status: B01–B10 now all have answers. Story fields for B01 remain UNKNOWN (not asked).

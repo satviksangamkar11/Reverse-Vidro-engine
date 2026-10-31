@@ -81,11 +81,11 @@ Folder: `work/phase1/human_review_bundle/clips/`
 - Scripts: the clip generator is in the session scratchpad (not in the repo). Its inputs and outputs are recorded in `_clip_results.json` in the clips folder.
 
 Owner answers (recorded in the files, not signed):
-- Review 1 (`OWNER_REVIEW_RESPONSES_R1.md`): B01 complete black screen; B02 approve; B03 zoom in; B04 zoom in with woman's hand first, then man's; B05 story "after 1000 years with the guru, Kacha was back", sage's hand first, then standing character; B06 same story, camera moves right; B07 same as B06. B08, B09, B10 NOT answered. B01 story fields NOT answered.
+- Review 1 (`OWNER_REVIEW_RESPONSES_R1.md`): B01 complete black screen; B02 approve; B03 zoom in (no pan); B04 zoom in (no pan) with woman's hand first, then man's; B05 story "after 1000 years with the guru, Kacha was back", sage's hand first, then standing character; B06 same story, zoom in, Kacha walks right, no camera pan; B07 same as B06. B08 CORRECT (wide/full, in a fade, story and scene UNKNOWN); B09 CORRECT (Devayani walks in with arm already out; reveal YES); B10 CORRECT (red mark already present at 9.0 s; zooms to medium from about 11.7 s; reveal YES). B01 story fields UNKNOWN (not asked).
 - Review 2 (`OWNER_REVIEW_RESPONSES_R2.md`), approved on the owner's cross-check: S01 CORRECT (extreme close-up of drill bit only, no hands; shot ends 1.88 s); S02 APPROVE; S03 CORRECT (first wide shot; man drilling; boy's mouth closed); S04 CORRECT (bit turning and going deeper); S05 APPROVE; S06 APPROVE.
 - Pasted scene-level analysis (`PASTED_ANALYSIS_2026-10-31_UNCONFIRMED.md`, status OWNER-APPROVED): 13-scene story table for 7434a0f7; owner approved it on the cross-check.
 
-OPEN conflict: owner's B03, B04 and B06 answers (zoom in; camera moves right) vs the approved analysis (no push-in before about 11 s; only distance changes). One answer per item is needed.
+RESOLVED in the update: B03, B04 and B06 are recorded as zoom in with no pan (B06: Kacha walks right). The earlier "camera moves right" wording is withdrawn.
 
 Transcription readings to confirm: "gure" = guru; "kutch" = Kacha; "maharaj" = the seated sage.
 
@@ -99,8 +99,7 @@ No signature has been entered anywhere.
 
 ## 7. Items that remain OPEN
 
-1. Owner: B03 / B04 / B06 zoom and camera answers (see section 5).
-2. Owner: B08, B09, B10 (Review 1) and B01 story fields.
+1. Owner: B01 story fields (not asked). B03, B04, B06 and B08–B10 are recorded (section 5).
 3. Phase E: update departments 12–15 from the repaired media CSVs.
 4. Cut count 7434a0f7 conflict (7 vs 0).
 5. Media loop state is review-open; the supervisor PASS has not been re-run through the loop. Decide whether to re-run.
