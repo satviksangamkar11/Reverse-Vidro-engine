@@ -1,0 +1,11 @@
+video_id,status,reason,mapped_file,duration_s,samples,mean_luma,std_luma,near_black_fraction,mean_saturation
+10151cce,BLOCKED_BY_SOURCE,no mapped reference file,,,,,,,
+264e48c4,MEASURED_MEDIA,,WhatsApp Video 2026-10-28 at 9.47.55 PM.mp4,67.126,134,0.2096,0.1071,0.0522,0.3442
+585b32de,BLOCKED_BY_SOURCE,no mapped reference file,,,,,,,
+5c93ec37,MEASURED_MEDIA,,WhatsApp Video 2026-10-28 at 9.47.54 PM.mp4,65.513,131,0.2324,0.0838,0.0,0.5786
+69a00a0f,MEASURED_MEDIA,,WhatsApp Video 2026-10-28 at 9.47.56 PM.mp4,77.018,154,0.2356,0.0547,0.0,0.5666
+7434a0f7,MEASURED_MEDIA,,WhatsApp Video 2026-10-28 at 9.46.07 PM.mp4,53.887,108,0.2491,0.1239,0.0093,0.3998
+7a1e2b26,BLOCKED_BY_SOURCE,no mapped reference file,,,,,,,
+85c38505,BLOCKED_BY_SOURCE,no mapped reference file,,,,,,,
+a44aef0b,MEASURED_MEDIA,,WhatsApp Video 2026-10-28 at 9.47.18 PM.mp4,109.865,220,0.2359,0.0878,0.0273,0.5899
+caf6fb64,MEASURED_MEDIA,,WhatsApp Video 2026-10-28 at 9.47.53 PM.mp4,135.381,271,0.2664,0.1228,0.0332,0.4956

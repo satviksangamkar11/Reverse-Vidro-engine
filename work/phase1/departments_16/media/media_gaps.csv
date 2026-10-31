@@ -1,0 +1,15 @@
+video_id,colour_status,audio_analysed,transcript_status,caption_inventory_count,pacing_status,gap_note
+10151cce,BLOCKED_BY_SOURCE,Y,UNVERIFIED,60,PACING_OK,colour: no reference file mapped; sound classes never analysed
+264e48c4,MEASURED_MEDIA,Y,UNVERIFIED,32,PACING_OK,sound classes never analysed
+585b32de,BLOCKED_BY_SOURCE,Y,UNVERIFIED,13,PACING_OK,colour: no reference file mapped; sound classes never analysed
+5c93ec37,MEASURED_MEDIA,Y,UNVERIFIED,30,PACING_OK,sound classes never analysed; transcript empty
+69a00a0f,MEASURED_MEDIA,Y,UNVERIFIED,52,PACING_OK,sound classes never analysed
+7434a0f7,MEASURED_MEDIA,Y,UNVERIFIED,56,PACING_OK,sound classes never analysed
+7a1e2b26,BLOCKED_BY_SOURCE,Y,UNVERIFIED,85,PACING_OK,colour: no reference file mapped; sound classes never analysed
+85c38505,BLOCKED_BY_SOURCE,Y,UNVERIFIED,44,PACING_OK,colour: no reference file mapped; sound classes never analysed
+a44aef0b,MEASURED_MEDIA,Y,UNVERIFIED,37,PACING_OK,sound classes never analysed
+caf6fb64,MEASURED_MEDIA,Y,UNVERIFIED,190,PACING_OK,sound classes never analysed
+9.46.11_PROTECTED,PROTECTED_HELDOUT,PROTECTED_HELDOUT,,0,PROTECTED_HELDOUT,protected held-out; not read
+9.46.15_PROTECTED,PROTECTED_HELDOUT,PROTECTED_HELDOUT,,0,PROTECTED_HELDOUT,protected held-out; not read
+9.47.32_PROTECTED,PROTECTED_HELDOUT,PROTECTED_HELDOUT,,0,PROTECTED_HELDOUT,protected held-out; not read
+9.47.17_UNMAPPED,NOT_ANALYSED,N,,0,NOT_ANALYSED,reference file has no analysed folder; not analysed

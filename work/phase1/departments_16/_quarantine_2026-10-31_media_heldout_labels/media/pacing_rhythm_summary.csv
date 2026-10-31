@@ -1,0 +1,11 @@
+video_id,pacing_status,beat_count,zero_length_beat_count,zero_length_beat_ids,nonzero_beat_count,union_covered_seconds,median_nonzero_beat_seconds,overlapping_pairs,hard_cut_count,cuts_per_minute,gap_note
+10151cce,PACING_OK,54,0,,54,70.792,1.5,44,UNKNOWN_NOT_MEASURED,,
+264e48c4,PACING_OK,61,14,shot_002;shot_004;shot_007;shot_008;shot_009;shot_010;shot_013;shot_015;shot_017;shot_018;shot_023;shot_025;shot_031;shot_033,47,51.0,1.5,33,UNKNOWN_NOT_MEASURED,,
+585b32de,PACING_OK,65,1,shot_003,64,99.167,1.5,48,UNKNOWN_NOT_MEASURED,,
+5c93ec37,PACING_OK,45,6,shot_005;shot_007;shot_008;shot_010;shot_011;shot_013,39,56.333,1.5,29,UNKNOWN_NOT_MEASURED,,
+69a00a0f,PACING_OK,30,0,,30,74.867,1.5,26,UNKNOWN_NOT_MEASURED,,
+7434a0f7,PACING_OK,36,5,shot_001;shot_004;shot_007;shot_010;shot_014,31,47.5,1.5,24,0,0.0,
+7a1e2b26,PACING_OK,61,0,,61,58.333,1.5,41,33,27.757,
+85c38505,PACING_OK,45,1,shot_007,44,76.7,1.5,42,UNKNOWN_NOT_MEASURED,,
+a44aef0b,PACING_OK,66,2,shot_006;shot_019,64,97.733,1.5,47,UNKNOWN_NOT_MEASURED,,
+caf6fb64,PACING_OK,102,10,shot_003;shot_014;shot_018;shot_020;shot_026;shot_027;shot_029;shot_034;shot_037;shot_039,92,115.833,1.5,75,UNKNOWN_NOT_MEASURED,,

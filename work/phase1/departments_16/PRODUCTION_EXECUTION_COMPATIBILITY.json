@@ -1,0 +1,1445 @@
+{
+  "boundary_note": "GranthStudio read-only; no file modified; no model call",
+  "consumers": [
+    {
+      "excerpt": "jobs.append({\"shot_id\": it[\"shot_id\"], \"scene\": it[\"scene\"], \"flow_title\": f\"{it['shot_id']}__v01\", \"preset_suggested\": ",
+      "file": "scripts/flow/build_shot_jobs.py",
+      "line": 58,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "for key, repo, f in ((\"flux3\", \"black-forest-labs/flux-3-image-klein\", \"config.json\"), (\"kontext\", \"black-forest-labs/FL",
+      "file": "scripts/kaggle/build_gpu_all_notebook.py",
+      "line": 98,
+      "mentions": [
+        "index.json"
+      ]
+    },
+    {
+      "excerpt": "hf_hub_download(repo,\"config.json\" if key==\"flux3\" else \"model_index.json\"); ACCESS[key]=True; log(f\"access OK (gated co",
+      "file": "scripts/kaggle/build_tpu_notebook.py",
+      "line": 38,
+      "mentions": [
+        "index.json"
+      ]
+    },
+    {
+      "excerpt": "SHOT_ANIM = obj({\"shot_id\": SHOT_ID, \"preset\": {\"type\": \"string\", \"minLength\": 1}, \"assets\": {\"type\": \"object\", \"additio",
+      "file": "scripts/pipeline/make_schemas.py",
+      "line": 27,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"stage1_shots\": obj({\"adhyay\": ADH, \"shots\": arr(obj({\"shot_id\": SHOT_ID, \"scene_id\": SCENE_ID, \"ovi_ids\": arr(OVI, 1), ",
+      "file": "scripts/pipeline/make_schemas.py",
+      "line": 33,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"fingerprints\": obj({\"script\": SHA, \"timing\": SHA, \"presets\": SHA, \"images\": {\"type\": \"object\", \"additionalProperties\": ",
+      "file": "scripts/pipeline/make_schemas.py",
+      "line": 50,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "def _read_presets(preset_index_path: Path) -> tuple[list[str], list[str]]:",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 177,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"\"\"Read preset IDs from index.json.\"\"\"",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 178,
+      "mentions": [
+        "index.json",
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if not preset_index_path.is_file():",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 180,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "problems.append(\"presets: missing\")",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 181,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "with preset_index_path.open(\"r\", encoding=\"utf-8\") as f:",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 184,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "problems.append(f\"presets: {e.__class__.__name__}\")",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 187,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "problems.append(\"presets: not a list\")",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 191,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "preset_ids: list[str] = []",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 194,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "preset = item.get(\"preset\")",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 197,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if isinstance(preset, str):",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 198,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "preset_ids.append(preset)",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 199,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "return preset_ids, problems",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 200,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "preset_index_path = root_path / \"assets\" / \"v5_presets\" / \"index.json\"",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 272,
+      "mentions": [
+        "index.json",
+        "preset",
+        "v5_presets"
+      ]
+    },
+    {
+      "excerpt": "preset_ids, preset_problems = _read_presets(preset_index_path)",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 273,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "problems.extend(preset_problems)",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 274,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"preset_ids\": preset_ids,",
+      "file": "scripts/pipeline/stage1/context.py",
+      "line": 289,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"(3) a shot that uses a preset against its stated limits (06 cannot raise a lowered hand; \"",
+      "file": "scripts/pipeline/stage1/crosscheck.py",
+      "line": 14,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"09 cannot lip-sync; fixed halos cannot be switched off by wording) or an invented preset id;\\n\"",
+      "file": "scripts/pipeline/stage1/crosscheck.py",
+      "line": 15,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"Use supplied preset capabilities and sound availability; report NEED_NEW honestly. \"",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 18,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "# presets",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 178,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "presets_path = root / \"assets\" / \"v5_presets\" / \"index.json\"",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 179,
+      "mentions": [
+        "index.json",
+        "preset",
+        "v5_presets"
+      ]
+    },
+    {
+      "excerpt": "if presets_path.exists():",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 180,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "presets_data, presets_probs = _read_json_file(presets_path, \"presets\")",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 181,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if presets_probs:",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 182,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "problems.extend(presets_probs)",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 183,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "packet[\"presets\"] = []",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 184,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "elif isinstance(presets_data, list):",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 185,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "packet[\"presets\"] = presets_data",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 186,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "problems.append(\"presets: bad shape\")",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 188,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "packet[\"presets\"] = []",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 189,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "problems.append(\"presets: missing\")",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 191,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "packet[\"presets\"] = []",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 192,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"For ONLY the scenes in scene_ids produce shots (use a preset id from the preset list when one fits, \"",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 347,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"silence is valid; no music; nothing automatic from presets), and questions for every ambiguity (never a \"",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 353,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"presets\": packet[\"presets\"],",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 366,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"- no invented preset or image or voice id\\n\"",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 401,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"preset slot, full-frame or layer need, safe crop; approved light; ONLY on-screen facts (no narration \"",
+      "file": "scripts/pipeline/stage1/prompts.py",
+      "line": 413,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"preset\",",
+      "file": "scripts/pipeline/stage1/shots.py",
+      "line": 29,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"preset\": {\"type\": \"string\", \"pattern\": \"^([0-9]{2}_[a-z0-9_]+|NEED_NEW)$\"},",
+      "file": "scripts/pipeline/stage1/shots.py",
+      "line": 48,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"if\": {\"properties\": {\"preset\": {\"const\": \"NEED_NEW\"}}},",
+      "file": "scripts/pipeline/stage1/shots.py",
+      "line": 54,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "# Collect preset_ids from ctx",
+      "file": "scripts/pipeline/stage1/shots.py",
+      "line": 119,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "preset_ids = set(ctx.get(\"preset_ids\", []) or [])",
+      "file": "scripts/pipeline/stage1/shots.py",
+      "line": 120,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "preset = shot.get(\"preset\")",
+      "file": "scripts/pipeline/stage1/shots.py",
+      "line": 156,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if isinstance(preset, str) and preset != \"NEED_NEW\" and preset not in preset_ids:",
+      "file": "scripts/pipeline/stage1/shots.py",
+      "line": 157,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "errors.append(f\"{shot_id}: unknown preset {preset}\")",
+      "file": "scripts/pipeline/stage1/shots.py",
+      "line": 158,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "presets: dict[str, list[str]],",
+      "file": "scripts/pipeline/validate_assets.py",
+      "line": 162,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "preset = shot.get(\"preset\")",
+      "file": "scripts/pipeline/validate_assets.py",
+      "line": 185,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if preset != \"NEED_NEW\":",
+      "file": "scripts/pipeline/validate_assets.py",
+      "line": 189,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "errors.append(f\"{shot_id}: need_new must be null unless preset is NEED_NEW\")",
+      "file": "scripts/pipeline/validate_assets.py",
+      "line": 191,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if preset not in presets:",
+      "file": "scripts/pipeline/validate_assets.py",
+      "line": 192,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "errors.append(f\"{shot_id}: unknown preset {preset}\")",
+      "file": "scripts/pipeline/validate_assets.py",
+      "line": 193,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "required_roles = set(presets[preset])",
+      "file": "scripts/pipeline/validate_assets.py",
+      "line": 195,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if fp.get(\"presets\") != current.get(\"presets\"):",
+      "file": "scripts/pipeline/validate_assets.py",
+      "line": 230,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "errors.append(\"presets changed\")",
+      "file": "scripts/pipeline/validate_assets.py",
+      "line": 231,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "bible[\"images\"][im[\"image_id\"]] = {k: im[k] for k in (\"image_id\", \"kind\", \"scenes\", \"preset_roles\", \"entities\", \"referen",
+      "file": "scripts/source/a1_bible.py",
+      "line": 67,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"catalog\": [{k: i[k] for k in (\"image_id\", \"kind\", \"preset_roles\", \"entities\", \"covers_shots\", \"owner_choice\")} for i in",
+      "file": "scripts/source/a1_bible.py",
+      "line": 82,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "(ad / f\"A1_full_{name}_index.json\").write_text(json.dumps(r, ensure_ascii=False, indent=1), encoding=\"utf-8\")",
+      "file": "scripts/source/a1_voice.py",
+      "line": 188,
+      "mentions": [
+        "index.json"
+      ]
+    },
+    {
+      "excerpt": "PRESET_DIR = ROOT / \"assets\" / \"v5_presets\"",
+      "file": "scripts/source/director_test.py",
+      "line": 31,
+      "mentions": [
+        "v5_presets"
+      ]
+    },
+    {
+      "excerpt": "\"required\": [\"shot_id\", \"ovi_ids\", \"preset\", \"assets\", \"action\", \"held_pose\", \"needs\", \"performance\", \"camera\", \"dialogu",
+      "file": "scripts/source/director_test.py",
+      "line": 71,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"preset\": {\"type\": \"string\"},",
+      "file": "scripts/source/director_test.py",
+      "line": 75,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "def frame_ends(preset_json: dict) -> dict:",
+      "file": "scripts/source/director_test.py",
+      "line": 129,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"\"\"First and last frame of a preset, derived from its own transform (never from the model): layer roles visible and came",
+      "file": "scripts/source/director_test.py",
+      "line": 130,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "segs = preset_json[\"segments\"]",
+      "file": "scripts/source/director_test.py",
+      "line": 131,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "PRESET_MOTION = {\"04_character_entrance\": re.compile(r\"^(walk\\w*|enter\\w*)$\", re.I)}      # the walking-entrance preset ",
+      "file": "scripts/source/director_test.py",
+      "line": 158,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "def motion_hit(sh: dict, preset: str):",
+      "file": "scripts/source/director_test.py",
+      "line": 161,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"\"\"The first asserted (not negated) motion word in the action or performance that this preset cannot show.\"\"\"",
+      "file": "scripts/source/director_test.py",
+      "line": 162,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if preset in PRESET_MOTION and PRESET_MOTION[preset].match(m.group(0)):",
+      "file": "scripts/source/director_test.py",
+      "line": 167,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"\"\"Documented default: a preset shot that omits 'needs' means ['none'] (the motion check and reviewers still judge the s",
+      "file": "scripts/source/director_test.py",
+      "line": 182,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if isinstance(sh, dict) and \"needs\" not in sh and sh.get(\"preset\") != \"NEED_NEW\":",
+      "file": "scripts/source/director_test.py",
+      "line": 187,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "def validate_scene(scene, presets: dict, ovi_text: dict, scene_range: tuple, ctx: dict, chapter: int = 1, scene_id: str ",
+      "file": "scripts/source/director_test.py",
+      "line": 208,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"\"\"(errors, warnings). presets: name -> role names; ovi_text: ovi -> Marathi text of the SCENE's range (and only that).",
+      "file": "scripts/source/director_test.py",
+      "line": 209,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "ctx (all keys required): packet_text (the owner's research the director saw), speakers (registered names), preset_json (",
+      "file": "scripts/source/director_test.py",
+      "line": 210,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "preset = sh[\"preset\"]",
+      "file": "scripts/source/director_test.py",
+      "line": 248,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if preset == \"NEED_NEW\":",
+      "file": "scripts/source/director_test.py",
+      "line": 249,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "elif preset not in presets:",
+      "file": "scripts/source/director_test.py",
+      "line": 252,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "errors.append(f\"{sid}: unknown preset {preset!r} (use one of {sorted(presets)} or NEED_NEW)\")",
+      "file": "scripts/source/director_test.py",
+      "line": 253,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if set(sh[\"assets\"]) != set(presets[preset]):",
+      "file": "scripts/source/director_test.py",
+      "line": 255,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "errors.append(f\"{sid}: assets must have exactly the roles {sorted(presets[preset])} for {preset}, got {sorted(sh['assets",
+      "file": "scripts/source/director_test.py",
+      "line": 256,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "errors.append(f\"{sid}: needs {sh['needs']} but preset {preset} gives only a held pose and a camera move; use NEED_NEW\")",
+      "file": "scripts/source/director_test.py",
+      "line": 258,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "m = motion_hit(sh, preset)",
+      "file": "scripts/source/director_test.py",
+      "line": 259,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "pj = ctx[\"preset_json\"].get(preset)",
+      "file": "scripts/source/director_test.py",
+      "line": 262,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "warnings.append(f\"{sid}: camera text {sh['camera']!r} contradicts the preset's zoom {z0} -> {z1}\")",
+      "file": "scripts/source/director_test.py",
+      "line": 267,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "warnings.append(f\"{sid}: camera text states zoom values {stated} but the preset fixes {z0} -> {z1}\")",
+      "file": "scripts/source/director_test.py",
+      "line": 270,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "run = run + 1 if preset == prev else 1",
+      "file": "scripts/source/director_test.py",
+      "line": 275,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "prev = preset",
+      "file": "scripts/source/director_test.py",
+      "line": 276,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if run > 2 and preset != \"NEED_NEW\":",
+      "file": "scripts/source/director_test.py",
+      "line": 277,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "warnings.append(f\"{sid}: preset {preset} used {run} times in a row\")",
+      "file": "scripts/source/director_test.py",
+      "line": 278,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "if preset in CLOSEUPS and i > 1 and scene[\"shots\"][i - 1][\"preset\"] in CLOSEUPS and scene[\"shots\"][i - 2][\"preset\"] in C",
+      "file": "scripts/source/director_test.py",
+      "line": 279,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "warnings.append(f\"{sid}: three close-up presets in a row\")",
+      "file": "scripts/source/director_test.py",
+      "line": 280,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "elif not (kind == \"camera\" and preset in presets and not (words(t) & INVENTABLE)):         # the preset fixes the camera",
+      "file": "scripts/source/director_test.py",
+      "line": 314,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "return \"UNRESOLVED\" if any(sh[\"preset\"] == \"NEED_NEW\" for sh in scene[\"shots\"]) else \"VALID\"",
+      "file": "scripts/source/director_test.py",
+      "line": 391,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "T2. Vary the kind of shot (the code warns the owner when one preset appears three times in a row or three close-up prese",
+      "file": "scripts/source/director_test.py",
+      "line": 455,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "T7. The film must look FULL (owner's rule): choose the presets and catalog images so every shot is a completely drawn sc",
+      "file": "scripts/source/director_test.py",
+      "line": 460,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "- Each shot picks ONE of the presets listed (name exactly). Select presets using their supplied transforms, layer format",
+      "file": "scripts/source/director_test.py",
+      "line": 469,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "SCHEMA_TEXT = \"\"\"OUTPUT: Return ONE JSON object only (no text before or after, no code fence). Required scene keys: scen",
+      "file": "scripts/source/director_test.py",
+      "line": 472,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"shots\": [{\"shot_id\": \"S<n>-1\", \"ovi_ids\": [\"A1:84\"], \"preset\": \"<preset name or NEED_NEW>\", \"need_new_reason\": \"only if",
+      "file": "scripts/source/director_test.py",
+      "line": 474,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "Constraints: scene_id is \"S\" plus one digit and equals the scene you were asked for; shot_ids are S<n>-1, S<n>-2 ... con",
+      "file": "scripts/source/director_test.py",
+      "line": 481,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "def preset_facts(pj: dict) -> str:",
+      "file": "scripts/source/director_test.py",
+      "line": 484,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"\"\"What a preset really does (from its own JSON): the zoom and the effects that cannot be switched off.\"\"\"",
+      "file": "scripts/source/director_test.py",
+      "line": 485,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "def build_prompt(n: int, rng: tuple, files: dict, ovis: dict, presets_index: list, speakers: list, chapter: int = 1, pre",
+      "file": "scripts/source/director_test.py",
+      "line": 564,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "pjs = preset_json or {}",
+      "file": "scripts/source/director_test.py",
+      "line": 569,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "preset_block = \"\\n\".join(f\"- {p['preset']}: {p['use']} ROLES: {', '.join(p['assets'])}\" + (f\" | {preset_facts(pjs[p['pre",
+      "file": "scripts/source/director_test.py",
+      "line": 570,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "f\"=== PRESETS (use these names exactly) ===\\n{preset_block}\\n\\n\"",
+      "file": "scripts/source/director_test.py",
+      "line": 574,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "presets_index = json.loads((PACKET / \"presets_index.json\").read_text(encoding=\"utf-8\"))",
+      "file": "scripts/source/director_test.py",
+      "line": 599,
+      "mentions": [
+        "index.json",
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "return files, ovis, presets_index",
+      "file": "scripts/source/director_test.py",
+      "line": 600,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "def load_preset_json(presets_index: list) -> dict:",
+      "file": "scripts/source/director_test.py",
+      "line": 603,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "return {p[\"preset\"]: json.loads((PRESET_DIR / f\"{p['preset']}.json\").read_text(encoding=\"utf-8\")) for p in presets_index",
+      "file": "scripts/source/director_test.py",
+      "line": 604,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "(\"Q5\", \"Can every shot that uses a preset be made as ONE held pose with a camera move and breathing only (no limb motion",
+      "file": "scripts/source/director_test.py",
+      "line": 614,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "def direct_scene(director: Agent, reviewers: list, n: int, rng: tuple, chapter: int, files: dict, ovis: dict, presets_in",
+      "file": "scripts/source/director_test.py",
+      "line": 837,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "presets = {p[\"preset\"]: p[\"assets\"] for p in presets_index}",
+      "file": "scripts/source/director_test.py",
+      "line": 839,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "system, materials = build_prompt(n, rng, files, ovis, presets_index, sorted(x for x in ctx[\"speakers\"] if \"(\" not in x),",
+      "file": "scripts/source/director_test.py",
+      "line": 841,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "check = lambda sc: validate_scene(sc, presets, ovi_text, rng, ctx, chapter, f\"S{n}\")",
+      "file": "scripts/source/director_test.py",
+      "line": 845,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "L += [f\"### {sh.get('shot_id')}: {sh.get('preset')} (6 s), ovi {sh.get('ovi_ids')}\",",
+      "file": "scripts/source/director_test.py",
+      "line": 917,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "consumed = [\"adhyay_01_ovis_hj.jsonl\", \"presets_index.json\", \"frozen_copies/adhyay_01__adhyay_01_video_gaps_addendum.md\"",
+      "file": "scripts/source/director_test.py",
+      "line": 939,
+      "mentions": [
+        "index.json",
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "files, ovis, presets_index = load_inputs()",
+      "file": "scripts/source/director_test.py",
+      "line": 1000,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "ctx = {\"packet_text\": \"\", \"speakers\": speaker_registry(files[\"analysis\"].splitlines()), \"preset_json\": load_preset_json(",
+      "file": "scripts/source/director_test.py",
+      "line": 1011,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "\"presets_sha256\": {p: _sha(PRESET_DIR / f\"{p}.json\") for p in sorted(ctx[\"preset_json\"])},",
+      "file": "scripts/source/director_test.py",
+      "line": 1017,
+      "mentions": [
+        "preset"
+      ]
+    },
+    {
+      "excerpt": "r = direct_scene(recorded(director, run, n), [recorded(x, run, n) for x in reviewers], n, ranges[n], 1, files, ovis, pre",
+      "file": "scripts/source/director_test.py",
+      "line": 1029,
+      "mentions": [
+        "preset"
+      ]
+    }
+  ],
+  "counts": {
+    "consumers": 124,
+    "lessons": 7,
+    "presets": 11,
+    "techniques": 13
+  },
+  "lessons": [
+    {
+      "lesson_id": "L1_preview_then_retell",
+      "need": "UNKNOWN",
+      "preset_match": "NO_REGISTERED_PRESET",
+      "renderer_executability": "NOT_EXECUTABLE_WITHOUT_PRESET",
+      "status": "CANDIDATE",
+      "story_directing_guidance": "Preview the exchange first, retell it in full later candidate; not verified",
+      "technique_tags": [],
+      "title": "Preview the exchange first, retell it in full later"
+    },
+    {
+      "lesson_id": "L2_slow_push_in",
+      "need": "UNKNOWN",
+      "preset_match": "NO_REGISTERED_PRESET",
+      "renderer_executability": "NOT_EXECUTABLE_WITHOUT_PRESET",
+      "status": "CANDIDATE",
+      "story_directing_guidance": "Slow push-in on a held composition candidate; not verified",
+      "technique_tags": [
+        "camera_move"
+      ],
+      "title": "Slow push-in on a held composition"
+    },
+    {
+      "lesson_id": "L3_dark_dip_between_scenes",
+      "need": "UNKNOWN",
+      "preset_match": "NO_REGISTERED_PRESET",
+      "renderer_executability": "NOT_EXECUTABLE_WITHOUT_PRESET",
+      "status": "CANDIDATE",
+      "story_directing_guidance": "Dark dip separates scenes or time jumps candidate; not verified",
+      "technique_tags": [
+        "cut_transition"
+      ],
+      "title": "Dark dip separates scenes or time jumps"
+    },
+    {
+      "lesson_id": "L4_snapped_gesture_held_expression",
+      "need": "UNKNOWN",
+      "preset_match": "NO_REGISTERED_PRESET",
+      "renderer_executability": "NOT_EXECUTABLE_WITHOUT_PRESET",
+      "status": "CANDIDATE",
+      "story_directing_guidance": "Snapped gestures with held expressions candidate; not verified",
+      "technique_tags": [
+        "pose_swap",
+        "static_hold"
+      ],
+      "title": "Snapped gestures with held expressions"
+    },
+    {
+      "lesson_id": "L5_colour_coded_particle_streams",
+      "need": "UNKNOWN",
+      "preset_match": "NO_REGISTERED_PRESET",
+      "renderer_executability": "NOT_EXECUTABLE_WITHOUT_PRESET",
+      "status": "CANDIDATE",
+      "story_directing_guidance": "Direction and colour tell two actions apart candidate; not verified",
+      "technique_tags": [
+        "particle_vfx"
+      ],
+      "title": "Direction and colour tell two actions apart"
+    },
+    {
+      "lesson_id": "L6_word_group_subtitles",
+      "need": "UNKNOWN",
+      "preset_match": "NO_REGISTERED_PRESET",
+      "renderer_executability": "NOT_EXECUTABLE_WITHOUT_PRESET",
+      "status": "CANDIDATE",
+      "story_directing_guidance": "Word-group subtitles with one highlighted key word candidate; not verified",
+      "technique_tags": [
+        "text_overlay"
+      ],
+      "title": "Word-group subtitles with one highlighted key word"
+    },
+    {
+      "lesson_id": "L7_question_end_card",
+      "need": "UNKNOWN",
+      "preset_match": "NO_REGISTERED_PRESET",
+      "renderer_executability": "NOT_EXECUTABLE_WITHOUT_PRESET",
+      "status": "CANDIDATE",
+      "story_directing_guidance": "Question end card over a fade to dark candidate; not verified",
+      "technique_tags": [
+        "text_overlay",
+        "cut_transition"
+      ],
+      "title": "Question end card over a fade to dark"
+    }
+  ],
+  "presets": [
+    {
+      "asset_status": {
+        "fg": "not found",
+        "fx": "not found",
+        "mid": "not found",
+        "sky": "not found"
+      },
+      "assets": [
+        "fg",
+        "fx",
+        "mid",
+        "sky"
+      ],
+      "assets_available": false,
+      "preset": "01_establishing_shot",
+      "simplest_renderer": "blender",
+      "use": "Wide place-setting shot: 4 layers (sky far, mid subject, fx light, fg frame), 1.0->1.28 dolly. Needs: sky, mid, fx, fg."
+    },
+    {
+      "asset_status": {
+        "far": "not found",
+        "mid": "not found",
+        "near": "not found",
+        "sky": "not found"
+      },
+      "assets": [
+        "far",
+        "mid",
+        "near",
+        "sky"
+      ],
+      "assets_available": false,
+      "preset": "02_environmental_parallax",
+      "simplest_renderer": "blender",
+      "use": "Lateral move through 4 depth layers (schema requires a zoom change >= 0.12 per shot). Needs: sky, far, mid, near."
+    },
+    {
+      "asset_status": {
+        "img": "not found"
+      },
+      "assets": [
+        "img"
+      ],
+      "assets_available": false,
+      "preset": "03_slow_cinematic_push",
+      "simplest_renderer": "motion.py",
+      "use": "One image, slow 1.0->1.2 push, no effects. SIMPLEST renderer: motion.py (CPU, ffmpeg). Needs: img."
+    },
+    {
+      "asset_status": {
+        "char": "not found",
+        "other": "not found"
+      },
+      "assets": [
+        "char",
+        "other"
+      ],
+      "assets_available": false,
+      "preset": "04_character_entrance",
+      "simplest_renderer": "blender",
+      "use": "Character walks in toward a seated figure; camera pans with them. Needs: char (walking pose, transparent), other (seated pose, transparent)."
+    },
+    {
+      "asset_status": {
+        "pose": "not found"
+      },
+      "assets": [
+        "pose"
+      ],
+      "assets_available": false,
+      "preset": "05_bowing_prayer",
+      "simplest_renderer": "blender",
+      "use": "Bow / pranam: tilt down onto the contact point. Needs: pose (both figures, transparent)."
+    },
+    {
+      "asset_status": {
+        "pose": "not found"
+      },
+      "assets": [
+        "pose"
+      ],
+      "assets_available": false,
+      "preset": "06_blessing_gesture",
+      "simplest_renderer": "blender",
+      "use": "Raised-hand blessing pose with a slow push toward the hand. LIMIT: the soft warp only nudges an already-raised hand (measured ~1 grey level, not visible); a believable raise needs an extra pose image. Needs: pose (raised hand)."
+    },
+    {
+      "asset_status": {
+        "face": "not found"
+      },
+      "assets": [
+        "face"
+      ],
+      "assets_available": false,
+      "preset": "07_character_reaction",
+      "simplest_renderer": "blender",
+      "use": "Close-up of a face with a slow push and breathing. Needs: face (close-up, transparent)."
+    },
+    {
+      "asset_status": {
+        "face": "not found"
+      },
+      "assets": [
+        "face"
+      ],
+      "assets_available": false,
+      "preset": "08_emotional_closeup",
+      "simplest_renderer": "blender",
+      "use": "Slower, closer push with a soft halo for a quiet emotional beat. Needs: face (close-up, transparent)."
+    },
+    {
+      "asset_status": {
+        "left": "not found",
+        "right": "not found"
+      },
+      "assets": [
+        "left",
+        "right"
+      ],
+      "assets_available": false,
+      "preset": "09_dialogue_composition",
+      "simplest_renderer": "blender",
+      "use": "Two figures facing each other, gentle drift across them. Needs: left, right (transparent poses facing each other). No lip-sync."
+    },
+    {
+      "asset_status": {
+        "insert": "not found"
+      },
+      "assets": [
+        "insert"
+      ],
+      "assets_available": false,
+      "preset": "10_object_hand_insert",
+      "simplest_renderer": "blender",
+      "use": "Close-up insert of hands / an object. Needs: insert (full-frame close-up)."
+    },
+    {
+      "asset_status": {
+        "scene_a": "not found",
+        "scene_b": "not found"
+      },
+      "assets": [
+        "scene_a",
+        "scene_b"
+      ],
+      "assets_available": false,
+      "preset": "11_scene_transition",
+      "simplest_renderer": "blender",
+      "use": "Two scenes joined by a 6-frame pan bridge (no slow dissolve, so no ghosting). Needs: scene_a, scene_b."
+    }
+  ],
+  "techniques": [
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "NEED_NEW",
+      "id": "technique:background_layer",
+      "need": "NEEDS_NEW_CAPABILITY",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "NEED_NEW",
+        "NO_PRESET_ID"
+      ]
+    },
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "NEED_NEW",
+      "id": "technique:camera_move",
+      "need": "NEEDS_NEW_CAPABILITY",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "NEED_NEW",
+        "NO_PRESET_ID"
+      ]
+    },
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "NEED_NEW",
+      "id": "technique:cut_transition",
+      "need": "NEEDS_NEW_CAPABILITY",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "NEED_NEW",
+        "NO_PRESET_ID"
+      ]
+    },
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "NEED_NEW",
+      "id": "technique:cutout_animation",
+      "need": "NEEDS_NEW_CAPABILITY",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "NEED_NEW",
+        "NO_PRESET_ID"
+      ]
+    },
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "NEED_NEW",
+      "id": "technique:facial_swap",
+      "need": "NEEDS_NEW_CAPABILITY",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "NEED_NEW",
+        "NO_PRESET_ID"
+      ]
+    },
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "NEED_NEW",
+      "id": "technique:layer_transform",
+      "need": "NEEDS_NEW_CAPABILITY",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "NEED_NEW",
+        "NO_PRESET_ID"
+      ]
+    },
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "NEED_NEW",
+      "id": "technique:overlay_light",
+      "need": "NEEDS_NEW_CAPABILITY",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "NEED_NEW",
+        "NO_PRESET_ID"
+      ]
+    },
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "NEED_NEW",
+      "id": "technique:particle_vfx",
+      "need": "NEEDS_NEW_CAPABILITY",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "NEED_NEW",
+        "NO_PRESET_ID"
+      ]
+    },
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "NEED_NEW",
+      "id": "technique:pose_swap",
+      "need": "NEEDS_NEW_CAPABILITY",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "NEED_NEW",
+        "NO_PRESET_ID"
+      ]
+    },
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "POSE_OR_LAYER_CHANGE",
+      "id": "technique:puppet_limb_rotation",
+      "need": "UNKNOWN",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "MISSING_ASSET",
+        "NO_PRESET_ID"
+      ]
+    },
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "NEED_NEW",
+      "id": "technique:puppet_rig",
+      "need": "NEEDS_NEW_CAPABILITY",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "NEED_NEW",
+        "NO_PRESET_ID"
+      ]
+    },
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "NEED_NEW",
+      "id": "technique:static_hold",
+      "need": "NEEDS_NEW_CAPABILITY",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "NEED_NEW",
+        "NO_PRESET_ID"
+      ]
+    },
+    {
+      "assets_available": false,
+      "bucket": "RESEARCH_ONLY",
+      "classification": "EXPERIMENTAL",
+      "executability": "NEED_NEW",
+      "id": "technique:text_overlay",
+      "need": "NEEDS_NEW_CAPABILITY",
+      "preset_id": null,
+      "preset_match": "NO_REGISTERED_PRESET",
+      "reasons": [
+        "NO_ART_STYLE_RECORDED",
+        "NEED_NEW",
+        "NO_PRESET_ID"
+      ]
+    }
+  ]
+}

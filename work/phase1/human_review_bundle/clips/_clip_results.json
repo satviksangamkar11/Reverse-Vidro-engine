@@ -1,0 +1,326 @@
+[
+ {
+  "file": "R1_7434a0f7_B01_shot_001_0.0-0.0s_FLAG_ZERO_LENGTH.png",
+  "status": "FLAG_ZERO_LENGTH_FRAME_REFERENCE",
+  "eval": [
+   0.0,
+   0.0
+  ],
+  "frame": 0,
+  "ok": true,
+  "sha256": "fd4cd72eb30e2bb7e9916203b18456298f5d78d63646cda76e34b6483d31fa31",
+  "review": "1",
+  "video": "7434a0f7",
+  "item": "B01",
+  "records": "shot_001"
+ },
+ {
+  "file": "R1_7434a0f7_B02_shot_002_0.5-4.5s.mp4",
+  "extract": [
+   0.0,
+   5.5
+  ],
+  "eval": [
+   0.5,
+   4.5
+  ],
+  "duration": 5.5,
+  "expected": 5.5,
+  "audio": true,
+  "content_diff": 0.14,
+  "ok": true,
+  "sha256": "4027e39ea464aaba824fe31de5ae1b36c572ec667dcc1ccd00c36889ce914e38",
+  "review": "1",
+  "video": "7434a0f7",
+  "item": "B02",
+  "records": "shot_002"
+ },
+ {
+  "file": "R1_7434a0f7_B03_event_001_1.0-2.5s.mp4",
+  "extract": [
+   0.0,
+   3.5
+  ],
+  "eval": [
+   1.0,
+   2.5
+  ],
+  "duration": 3.5,
+  "expected": 3.5,
+  "audio": true,
+  "content_diff": 0.14,
+  "ok": true,
+  "sha256": "2b2f37848042344fd80534fa9907b7a862add1cf2dc5656b2c346c0597bdf7df",
+  "review": "1",
+  "video": "7434a0f7",
+  "item": "B03",
+  "records": "event_001"
+ },
+ {
+  "file": "R1_7434a0f7_B04_event_002_3.0-4.5s.mp4",
+  "extract": [
+   2.0,
+   5.5
+  ],
+  "eval": [
+   3.0,
+   4.5
+  ],
+  "duration": 3.5,
+  "expected": 3.5,
+  "audio": true,
+  "content_diff": 0.14,
+  "ok": true,
+  "sha256": "28da492f12451e379aa96ddd4465382ab8be01d0d008c34471b81a5c344344e2",
+  "review": "1",
+  "video": "7434a0f7",
+  "item": "B04",
+  "records": "event_002"
+ },
+ {
+  "file": "R1_7434a0f7_B05_event_003_5.0-6.5s.mp4",
+  "extract": [
+   4.0,
+   7.5
+  ],
+  "eval": [
+   5.0,
+   6.5
+  ],
+  "duration": 3.5,
+  "expected": 3.5,
+  "audio": true,
+  "content_diff": 0.16,
+  "ok": true,
+  "sha256": "4c2cb54dc22edfc2c04e9b99279f36ad7bb0d97ee69046468c0f621ff7ad23d5",
+  "review": "1",
+  "video": "7434a0f7",
+  "item": "B05",
+  "records": "event_003"
+ },
+ {
+  "file": "R1_7434a0f7_B06_shot_003_5.0-8.5s.mp4",
+  "extract": [
+   4.0,
+   9.5
+  ],
+  "eval": [
+   5.0,
+   8.5
+  ],
+  "duration": 5.5,
+  "expected": 5.5,
+  "audio": true,
+  "content_diff": 0.16,
+  "ok": true,
+  "sha256": "b6d75c4f414ecb2151467b0f2d711a46d80a2f4d358ae49d2d6bde8d8637475e",
+  "review": "1",
+  "video": "7434a0f7",
+  "item": "B06",
+  "records": "shot_003"
+ },
+ {
+  "file": "R1_7434a0f7_B07_event_004_7.0-8.5s.mp4",
+  "extract": [
+   6.0,
+   9.5
+  ],
+  "eval": [
+   7.0,
+   8.5
+  ],
+  "duration": 3.5,
+  "expected": 3.5,
+  "audio": true,
+  "content_diff": 0.23,
+  "ok": true,
+  "sha256": "9bbe19a5a0748949f5db0afea3453854dd5b666902aed1cb4eb10d4ca455fa0f",
+  "review": "1",
+  "video": "7434a0f7",
+  "item": "B07",
+  "records": "event_004"
+ },
+ {
+  "file": "R1_7434a0f7_B08_shot_004_9.0-9.0s_FLAG_ZERO_LENGTH.png",
+  "status": "FLAG_ZERO_LENGTH_FRAME_REFERENCE",
+  "eval": [
+   9.0,
+   9.0
+  ],
+  "frame": 270,
+  "ok": true,
+  "sha256": "625fd412aa417bc9b12b4f9146105c67f3d1b1b1613adbf1193ae17fc93047e9",
+  "review": "1",
+  "video": "7434a0f7",
+  "item": "B08",
+  "records": "shot_004"
+ },
+ {
+  "file": "R1_7434a0f7_B09_event_005_9.5-11.0s.mp4",
+  "extract": [
+   8.5,
+   12.0
+  ],
+  "eval": [
+   9.5,
+   11.0
+  ],
+  "duration": 3.5,
+  "expected": 3.5,
+  "audio": true,
+  "content_diff": 0.23,
+  "ok": true,
+  "sha256": "8806d5fcb63f5747462d9569f5929fce0e9bc91f3b7b44d63e4e0af0be06fb1f",
+  "review": "1",
+  "video": "7434a0f7",
+  "item": "B09",
+  "records": "event_005"
+ },
+ {
+  "file": "R1_7434a0f7_B10_shot_005_9.5-12.5s.mp4",
+  "extract": [
+   8.5,
+   13.5
+  ],
+  "eval": [
+   9.5,
+   12.5
+  ],
+  "duration": 5.0,
+  "expected": 5.0,
+  "audio": true,
+  "content_diff": 0.23,
+  "ok": true,
+  "sha256": "fc397293e8a82451da19cc883e337cd05942ae8c2bb0b8a0b8ea156d45cdf5ad",
+  "review": "1",
+  "video": "7434a0f7",
+  "item": "B10",
+  "records": "shot_005"
+ },
+ {
+  "file": "R2_7a1e2b26_S01_0.0-1.5s.mp4",
+  "extract": [
+   0.0,
+   2.5
+  ],
+  "eval": [
+   0.0,
+   1.5
+  ],
+  "duration": 2.5,
+  "expected": 2.5,
+  "audio": true,
+  "content_diff": 0.13,
+  "ok": true,
+  "sha256": "d129cd7295835e1ae9e8b710f102da1df52d87f639d1644dc8a68640a402e4b0",
+  "review": "2",
+  "video": "7a1e2b26",
+  "item": "S01",
+  "records": "shot_001+event_001"
+ },
+ {
+  "file": "R2_7a1e2b26_S02_2.0-3.0s.mp4",
+  "extract": [
+   1.0,
+   4.0
+  ],
+  "eval": [
+   2.0,
+   3.0
+  ],
+  "duration": 3.0,
+  "expected": 3.0,
+  "audio": true,
+  "content_diff": 0.22,
+  "ok": true,
+  "sha256": "7d1bfbbf46efe754f26f476b8ed4b1b4409d0e5881ebcff049970edf322ffb91",
+  "review": "2",
+  "video": "7a1e2b26",
+  "item": "S02",
+  "records": "shot_002+event_002"
+ },
+ {
+  "file": "R2_7a1e2b26_S03_3.5-4.0s.mp4",
+  "extract": [
+   2.5,
+   5.0
+  ],
+  "eval": [
+   3.5,
+   4.0
+  ],
+  "duration": 2.5,
+  "expected": 2.5,
+  "audio": true,
+  "content_diff": 0.17,
+  "ok": true,
+  "sha256": "d26557d854e603f5ba989b159958a63c59f81f9ecc33bd76958ac33747abfba2",
+  "review": "2",
+  "video": "7a1e2b26",
+  "item": "S03",
+  "records": "shot_003"
+ },
+ {
+  "file": "R2_7a1e2b26_S04_4.5-5.5s.mp4",
+  "extract": [
+   3.5,
+   6.5
+  ],
+  "eval": [
+   4.5,
+   5.5
+  ],
+  "duration": 3.0,
+  "expected": 3.0,
+  "audio": true,
+  "content_diff": 0.17,
+  "ok": true,
+  "sha256": "c846feccf63f9509880dcde88281507c7d9c8761087a41b3517ce4d94bbbf816",
+  "review": "2",
+  "video": "7a1e2b26",
+  "item": "S04",
+  "records": "shot_004+event_003"
+ },
+ {
+  "file": "R2_7a1e2b26_S05_6.0-7.5s.mp4",
+  "extract": [
+   5.0,
+   8.5
+  ],
+  "eval": [
+   6.0,
+   7.5
+  ],
+  "duration": 3.5,
+  "expected": 3.5,
+  "audio": true,
+  "content_diff": 0.21,
+  "ok": true,
+  "sha256": "77221ce8ebb67ce2e58482480212769e7f73a001fd0082fd077466a7e792bc41",
+  "review": "2",
+  "video": "7a1e2b26",
+  "item": "S05",
+  "records": "shot_005+event_004"
+ },
+ {
+  "file": "R2_7a1e2b26_S06_8.0-9.5s.mp4",
+  "extract": [
+   7.0,
+   10.5
+  ],
+  "eval": [
+   8.0,
+   9.5
+  ],
+  "duration": 3.5,
+  "expected": 3.5,
+  "audio": true,
+  "content_diff": 0.28,
+  "ok": true,
+  "sha256": "3c7cb493c30f9aa1accbc421e1b6db8866b69dfd9b6df37cc7575610f038d27b",
+  "review": "2",
+  "video": "7a1e2b26",
+  "item": "S06",
+  "records": "shot_006"
+ }
+]

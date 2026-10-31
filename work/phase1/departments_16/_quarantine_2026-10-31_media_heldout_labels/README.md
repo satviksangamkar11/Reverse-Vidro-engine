@@ -1,0 +1,1 @@
+Quarantined 2026-10-31. These media outputs listed the three protected held-out reference timestamps (9.46.11, 9.46.15, 9.47.32) as UNMAPPED gap rows. Originals kept unchanged for audit. Sanitized outputs will be regenerated after the media repair; do not use these files as evidence.

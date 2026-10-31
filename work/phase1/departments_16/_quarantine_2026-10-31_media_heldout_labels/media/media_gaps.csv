@@ -1,0 +1,15 @@
+video_id,colour_status,audio_analysed,transcript_status,caption_inventory_count,pacing_status,gap_note
+10151cce,BLOCKED_BY_SOURCE,Y,UNVERIFIED,60,PACING_OK,sound classes never analysed; no mapped reference file
+264e48c4,MEASURED_MEDIA,Y,UNVERIFIED,32,PACING_OK,sound classes never analysed
+585b32de,BLOCKED_BY_SOURCE,Y,UNVERIFIED,13,PACING_OK,sound classes never analysed; no mapped reference file
+5c93ec37,MEASURED_MEDIA,Y,UNVERIFIED,31,PACING_OK,sound classes never analysed; transcript empty
+69a00a0f,MEASURED_MEDIA,Y,UNVERIFIED,53,PACING_OK,sound classes never analysed
+7434a0f7,MEASURED_MEDIA,Y,UNVERIFIED,57,PACING_OK,sound classes never analysed
+7a1e2b26,BLOCKED_BY_SOURCE,Y,UNVERIFIED,90,PACING_OK,sound classes never analysed; no mapped reference file
+85c38505,BLOCKED_BY_SOURCE,Y,UNVERIFIED,45,PACING_OK,sound classes never analysed; no mapped reference file
+a44aef0b,MEASURED_MEDIA,Y,UNVERIFIED,37,PACING_OK,sound classes never analysed
+caf6fb64,MEASURED_MEDIA,Y,UNVERIFIED,196,PACING_OK,sound classes never analysed
+9.46.11_UNMAPPED,,N,,0,,reference file has no analysed folder; not analysed
+9.46.15_UNMAPPED,,N,,0,,reference file has no analysed folder; not analysed
+9.47.17_UNMAPPED,,N,,0,,reference file has no analysed folder; not analysed
+9.47.32_UNMAPPED,,N,,0,,reference file has no analysed folder; not analysed

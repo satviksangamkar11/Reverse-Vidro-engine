@@ -1,0 +1,11 @@
+video_id,analysed,transcript_status,speech_segment_count,speech_seconds_total,wav_seconds,speech_coverage_fraction,silence_seconds,low_volume_seconds,sound_classes,gap_note
+10151cce,Y,UNVERIFIED,15,77.92,79.34,0.9821023443408117,0.0,0.0,UNKNOWN,sound classes never analysed
+264e48c4,Y,UNVERIFIED,16,63.96,67.04,0.9540572792362768,0.0,0.0,UNKNOWN,sound classes never analysed
+585b32de,Y,UNVERIFIED,38,101.13,109.68,0.9220459518599562,1.7500000000000142,0.0,UNKNOWN,sound classes never analysed
+5c93ec37,Y,UNVERIFIED,0,0.0,65.43,0.0,0.0,0.0,UNKNOWN,sound classes never analysed; transcript empty
+69a00a0f,Y,UNVERIFIED,22,64.0,76.93,0.8319251267385934,0.0,0.0,UNKNOWN,sound classes never analysed
+7434a0f7,Y,UNVERIFIED,19,51.0,53.78,0.9483079211602826,4.541312499999982,4.493,UNKNOWN,sound classes never analysed
+7a1e2b26,Y,UNVERIFIED,31,70.64,71.4,0.9893557422969187,0.0,0.0,UNKNOWN,sound classes never analysed
+85c38505,Y,UNVERIFIED,31,77.4,80.24,0.9646061814556333,0.0,0.0,UNKNOWN,sound classes never analysed
+a44aef0b,Y,UNVERIFIED,45,97.17,109.76,0.8852951895043731,1.0806562500000183,0.0,UNKNOWN,sound classes never analysed
+caf6fb64,Y,UNVERIFIED,77,111.60000000000004,135.38,0.8243462845324275,5.1500000000000705,1.205,UNKNOWN,sound classes never analysed
