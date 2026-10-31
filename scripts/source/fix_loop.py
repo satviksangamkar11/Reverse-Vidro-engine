@@ -1144,9 +1144,7 @@ def run_job(
                         any_missing = True
                 _valid = sum(1 for _r in rounds_record[-len(reviewers_list):] if str(_r.get("reason", "")).startswith(("verdict=READY", "verdict=FIX FIRST")))
                 _quorum = job.get("min_valid_reviews", 0) or len(reviewers_list)
-                if _judge_ready and not test_findings:          # owner 2026-10-31: the judge clears FIX FIRST only; a missing required reviewer stays missing
-                    any_fix_first = False
-                    new_pending_reports = []
+                # owner 2026-10-31 (repair): the judge's READY never clears a production FIX FIRST. Valid findings stay pending and go to the coder; the judge can only let a run pass when no FIX FIRST remains.
                 all_ready = (not any_fix_first) and (not test_findings) and ((_judge_ready and not any_missing) or _valid >= _quorum)          # owner 2026-10-31: the Haiku tie-breaker cannot pass a run with a missing required reviewer (P1-D24)          # default quorum = every reviewer; a lower min_valid_reviews tolerates NONE/timeouts
                 review_pass_count += 1
                 pending_review_reports = new_pending_reports
