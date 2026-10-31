@@ -20,7 +20,7 @@ Status vocabulary: RESEARCH_COMPLETE_FROM_AVAILABLE_EVIDENCE (none assigned), PA
 | 12 | Colour / lighting / art direction | PARTIAL_RESEARCH | brightness and saturation measured for 6 of 10 videos (media CSV); 4 BLOCKED (no reference mapped) | 0 | none | lighting setup, palette meaning, art direction | partly |
 | 13 | Sound / audiovisual editing | PARTIAL_RESEARCH | speech timing for 9 videos (transcripts UNVERIFIED); 5c93ec37 has no speech; sound classes not analysed | 0 | none | transcript verification; sound classes | partly |
 | 14 | Captions / motion graphics | PARTIAL_RESEARCH | 599 caption readings across 10 videos, all AI_READING_UNVERIFIED (media CSV) | 0 | none | verification of readings; motion-graphic design | partly |
-| 15 | Pacing / attention | PARTIAL_RESEARCH | beat rhythm for 10 videos (media CSV); hard-cut counts for 2 videos; median beat 1.5 s identical for all 10 (check before use) | 0 | none | 1.5 s median check; attention | partly |
+| 15 | Pacing / attention | PARTIAL_RESEARCH | beat rhythm for 10 videos (media CSV); hard-cut counts for 2 videos; median 1.5 s reproduced and explained as fixed event segmentation, not rhythm | 0 | none | attention; rhythm evidence not established | partly |
 | 16 | Practical execution | PARTIAL_RESEARCH | GranthStudio read-only check done: 0 of 13 techniques executable | 0 | none | executable preset; assets | yes (no executable path) |
 
 Totals across the 160 non-held-out cells (from DEPARTMENT_VIDEO_MATRIX.csv): NOT_EXAMINED 80 (depts 1, 2, 3, 4, 6, 12, 14, 15); PARTIAL_RESEARCH 61; BLOCKED_BY_SOURCE 1; UNKNOWN 20 (depts 10 and 16). No department is RESEARCH_COMPLETE.

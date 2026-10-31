@@ -37,7 +37,9 @@ Source: `media/caption_text_inventory.csv` (599 rows) and `media/media_gaps.csv`
 Source: `media/pacing_rhythm_summary.csv`. All 10 dev videos are PACING_OK.
 
 - Beats per video (total / zero-length): 10151cce 54/0, 264e48c4 61/14, 585b32de 65/1, 5c93ec37 45/6, 69a00a0f 30/0, 7434a0f7 36/5, 7a1e2b26 61/0, 85c38505 45/1, a44aef0b 66/2, caf6fb64 102/10. Zero-length beats are excluded from duration statistics; their ids are listed in the CSV.
-- **Caveat 1, not accepted:** `median_nonzero_beat_seconds` is exactly 1.5 for all 10 videos. A value identical across videos looks like a default or grid value, not a measurement. Check against the beat files before any use.
+- **Caveat 1, recomputed 2026-10-31: reproduced, but a segmentation artifact, not editing rhythm.** `median_nonzero_beat_seconds` = 1.5 s for all 10 videos. Reproduced from `work/phase1/v4/audit_<id>/beats_<id>.json`, the file `pieces/d16_media.py` reads. Sample: 565 beat records across the 10 videos. Zero-length records (end = start, 39 in total) are excluded, leaving 526 nonzero records. Nonzero counts per video: 54, 47, 64, 39, 30, 31, 61, 44, 64, 92. Derivation: median of (end_time − start_time) per video.
+  - Mechanism: event records are 56 to 84% of each video's nonzero beats. 328 of 354 nonzero event records (92.7%) are exactly 1.5 s long. Shot records have a median of 3.0 s, and 12% of them are 1.5 s.
+  - So the 1.5 s median is a consequence of fixed-length event segmentation. It is not observed editing rhythm and is not used as rhythm evidence. The producer of the event windows is not in this repo and was not located.
 - **Caveat 2:** `overlapping_pairs` (24 to 75 per video) are shot and event records over the same span. This is the design of the beat records, not a defect.
 - Hard-cut counts exist for 2 videos only:
   - 7a1e2b26: 33 hard cuts from the frozen detector, 27.76 per minute.
