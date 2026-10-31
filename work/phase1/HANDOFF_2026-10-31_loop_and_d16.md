@@ -126,3 +126,56 @@ No signature has been entered anywhere.
 3. Run tests: `python -m pytest -q pieces -p no:cacheprovider` (about 3 minutes). Expected: 1926 passed, 1 skipped, 0 failed, as of the media closure.
 4. Regenerate media only if its code changes: `python pieces/d16_media.py`. Compare the six CSVs with the snapshot in `_loop/archive/media_keygap_2144/csv_before`.
 5. Ask the owner before any push, loop wiring, or new human-review round.
+
+## 10. Review bench (verified from the job files, 2026-10-31)
+
+Every D16 job and the lifecycle job use the same bench (job files in `_loop/jobs/`, read on this date):
+
+| Setting | Value |
+|---|---|
+| Coder (fixers) | haiku, haiku, haiku (Haiku 5.5 high, Claude CLI) |
+| Reviewers | ultra (Nemotron 3 Ultra), groq (GPT-OSS 120B), codex (gpt-6-luna medium) |
+| Quorum (min_valid_reviews) | 2 |
+| Tie-breaker | Haiku 5.5, with job `judge_rules` |
+| max_rounds | 3 |
+| Spec reviews | Codex only (`tools/codex_review.py`) |
+
+Rules that go with the bench: a valid HIGH or MED that lets wrong output pass blocks; a judge READY cannot override it (fix in 157498d); an incomplete reply (NONE, truncated) is not counted; a missing required reviewer is never a pass; retries are bounded; Opus is used only when the owner asks (medium effort, read-only).
+
+Job files live in `_loop/`, which is git-ignored. They are NOT in the repo. A new session must recreate them from this table, or copy the `_loop/jobs/` folder by hand.
+
+## 11. Not in git and at risk
+
+- `_loop/` (job state, job configs, archives, logs): git-ignored. Archives are in `_loop/archive/`.
+- Escalation reports and review logs from the first matrix and media restarts were deleted before archiving. They cannot be recovered.
+- The two evidence sheets `work/phase1/human_review_bundle/sheet_7434a0f7_first10.jpg` and `sheet_7a1e2b26_first10.jpg` were untracked at the time of writing. Add them with `git add`.
+- The review clips, `REVIEW_CLIPS.zip`, and the two PNG frames are binaries kept out of git on purpose. They stay in `work/phase1/human_review_bundle/clips/`.
+- Local commits are NOT on GitHub yet (see section 12).
+- Unrelated work in the same working tree, NOT ours and NOT committed: `ops/wave_loop.py` (modified), `pieces/test_loop_acceptance.py`, `pieces/test_loop_races.py`, `pieces/test_p3_findings.py`, `specs/phase1_p3_findings.md`, and about 140 other changed paths from earlier parallel work.
+
+## 12. Push to GitHub (not done)
+
+The push was blocked by the permission system twice, including after the owner's explicit go-ahead in chat. Local `main` is 6 commits ahead of `origin/main`.
+
+Run this in the repo folder:
+
+```bash
+git push origin main
+```
+
+If the push is refused, check your GitHub login first (`git remote -v` shows `https://github.com/satviksangamkar11/Reverse-Vidro-engine.git`).
+
+## 13. Reviews not yet re-run after the last changes
+
+- The media loop is still `review-open`. Its supervisor PASS rests on the shared-check fixtures, the Opus PASS review, and the full suite. The loop itself has not been re-run.
+- The teacher repair (missing-key rule and the two exception checks) was supervisor-checked. It has no Codex spec review after the last amendment.
+- The lifecycle spec was amended after its last Codex review.
+- Department 12–15 Phase E text has not been updated from the repaired media CSVs (see section 7).
+
+## 14. Standing owner rules that a new session must keep
+
+- Answer the owner in English, even when he writes in Hindi or Marathi (saved in memory as `feedback_answer_in_english`).
+- Do not start a new human-approval round automatically.
+- Do not call Kimi or any vision model. Do not publish build_006. Do not modify GranthStudio.
+- Do not inspect held-out content.
+- Do not change F4, D4, the Step 4 detector, or historical snapshots.
