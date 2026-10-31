@@ -1,0 +1,56 @@
+Scene S8, plan P2 (X71f0c2d)
+
+Goal: Show Gajanan drinking at the cattle trough and Damodarpant returning to protest and offer vetiver-scented water.
+Turn: Damodarpant offers Gajanan sweet, clear, cool water scented with vetiver instead of the muddy trough water.
+
+shot 1
+preset: 01_establishing_shot
+ovi_ids: A1:134
+action: Dolly in toward the cattle drinking beside the well
+held_pose: Cattle hold drinking poses at the trough beside the well.
+performance: The narrator identifies the trough as the animals’ drinking place.
+camera: Slow dolly toward the well and trough
+staging: STAGING: Fill the depth layers with the well-side setting and trough-edge foreground.
+transition_out: cut
+
+shot 2
+preset: 02_environmental_parallax
+ovi_ids: A1:135
+action: Pan right across Gajanan and the arriving Damodarpant
+held_pose: Gajanan holds a satisfied pose at the trough while Damodarpant stands nearby carrying the brass gadva.
+performance: The narrator carries the drinking, satisfied belch and Damodarpant’s arrival.
+camera: Lateral pan from Gajanan to Damodarpant
+staging: STAGING: Keep Gajanan’s drinking finished and Damodarpant’s arrival as held poses.
+transition_out: cut
+
+shot 3
+preset: 01_establishing_shot
+ovi_ids: A1:136
+action: Dolly in on Damodarpant’s held stopping gesture
+held_pose: Damodarpant holds the gadva and a stopping hand toward Gajanan, who remains beside the muddy trough.
+performance: Damodarpant protests while Gajanan stays still at the trough.
+camera: Slow push toward the two figures
+staging: STAGING: Hold the protest without lip movement or a rising hand.
+transition_out: cut
+dialogue: Oh Samarth, stop! Do not drink that muddy water; it is fit only for animals.
+
+shot 4
+preset: 10_object_hand_insert
+ovi_ids: A1:137
+action: Push in on the offered gadva and its clear vetiver water
+held_pose: Damodarpant holds the brass gadva forward with clear water and vetiver visible inside.
+performance: The offered water remains held forward as Damodarpant explains its qualities.
+camera: Close push toward the gadva opening
+staging: STAGING: Frame the insert tightly on the vessel, water, vetiver and holding hands.
+transition_out: cut
+dialogue: See, I have brought sweet, clean, cool water for you, scented with vetiver.
+
+shot 5
+preset: 03_slow_cinematic_push
+ovi_ids: A1:137
+action: Push in toward the contrasting trough water and offered gadva
+held_pose: Gajanan remains beside the muddy trough while Damodarpant holds the clear vetiver water in the gadva.
+performance: The offered water stays before Gajanan without showing him drinking it.
+camera: Slow push across the full well-side composition
+staging: STAGING: Keep both waters visible in a filled foreground, midground and background composition.
+transition_out: cut

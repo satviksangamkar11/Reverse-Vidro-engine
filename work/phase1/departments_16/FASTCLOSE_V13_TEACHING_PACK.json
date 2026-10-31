@@ -1,0 +1,150 @@
+{
+  "schema": 1,
+  "name": "FASTCLOSE_V13_TEACHING_PACK",
+  "created": "2026-11-01",
+  "status": "EXPERIMENTAL",
+  "f4_production_eligibility": "UNCHANGED (all lessons stay EXPERIMENTAL; not injected into production)",
+  "baseline_sources": [
+    "D:/aai work/granthstudio/canon/director_runs/a1_s4_kimi_one/a01_scene4.json (Kimi K3.1 Pro, rev9 S4, ovi 108-112, VALID)",
+    "D:/aai work/granthstudio/canon/director_runs/a1_kimi_run1/a01_scene1.json (Kimi K3.1 Pro, old addendum scene 1, ovi 84-96, INVALID schema; older prompt version)",
+    "D:/aai work/granthstudio/canon/director_runs/a1_kimi_plan2/macro_A1.json (Kimi K3.1 Pro story split, VALID)",
+    "D:/aai work/granthstudio/docs/pilot/CODEX_FULL_ARCHITECTURE.md lines 18 and 21 (Codex review of the S4 plan)"
+  ],
+  "canon_safety_all": "Teach the technique only. Never transfer a reference video's characters, events, dialogue, motives, objects or miracles. Every person, object, event and motive still needs an ovi or PACKET source; STAGING stays limited to scenery, light, pose and camera and still needs the owner's approval. Owner direction notes win over every lesson.",
+  "lessons": [
+    {
+      "id": "L1",
+      "team": "director",
+      "weakness": "W3: both baseline scenes open on preset 01_establishing_shot; the opening never leads with the scene's key object or action.",
+      "observation": "7a1e2b26 (clay): 0.0-1.88 s extreme close-up of the drill bit only; 2.0-3.0 s hands turning the handle; 3.5-4.0 s first wide establishing shot.",
+      "evidence_provenance": "Owner, Review 2 S01-S03 (RECORDED-BY-STATEMENT, OWNER_RESPONSE_LEDGER_2026-10-31.md). Cut at 1.88 s owner-confirmed.",
+      "technique": "Detail-first opening: insert on the key object or action, then the wide establishing view.",
+      "dramatic_purpose": "Hook: the viewer meets the scene's question before its geography.",
+      "kimi_behavior": "When a scene's turn depends on an object or action stated in an ovi (plates, grains, gourd, water), consider opening on an insert of it and placing the establishing view second. Use only objects the ovis or PACKET name.",
+      "granthstudio_implementation": "10_object_hand_insert or 03_slow_cinematic_push on a full-frame flat insert image, then 03 on a complete wide flat image.",
+      "compatibility": "SUPPORTED",
+      "uncertainty": "One clay video; a reel opening, not a devotional scene. Technique transfer only.",
+      "canon_safety": "The opening object must be named in the scene's ovis or PACKET; no new prop."
+    },
+    {
+      "id": "L2",
+      "team": "director",
+      "weakness": "W5: S4 chose layered presets 01, 02 and 08 (3 of 5 shots) and S1 chose 01, 02, 07 (3 of 6); Codex found these need layers or transparent faces the flat finals do not supply, and the plan invented 9 image ids.",
+      "observation": "7434a0f7 (illustrated): 0.5-4.5 s one complete flat frame with a slow steady zoom-in and no pan; 5.0-8.5 s a new slow zoom-in after the cut at 4.93 s.",
+      "evidence_provenance": "Owner, Review 1 B03, B04, B06 (zoom in, no pan), confirmed by the owner on 2026-10-31 via the latest paste. Supervisor rough motion check consistent for 0.5-4.5 s. Frozen detector motion for this window not used.",
+      "technique": "Full-frame flat illustration plus a slow push as the default shot; layers only where a shot needs depth.",
+      "dramatic_purpose": "Keeps attention on the held pose while the picture stays alive.",
+      "kimi_behavior": "Default to 03_slow_cinematic_push on a complete flat image (background, midground and foreground drawn in one picture). Choose 01, 02, 04, 07, 08 or 09 only when the scene needs a layer move or a transparent cut-out, and say so in staging.",
+      "granthstudio_implementation": "03_slow_cinematic_push (motion.py, CPU). 10 for inserts. 11 only with two suitable frames.",
+      "compatibility": "SUPPORTED (matches the Codex fix for the flat finals)",
+      "uncertainty": "One video. The zoom magnitude is not measured precisely.",
+      "canon_safety": "No change to content; a framing choice only."
+    },
+    {
+      "id": "L3",
+      "team": "director",
+      "weakness": "W1: 9 of 11 baseline shots are push-in or dolly-in moves of similar strength; the turn shot gets the same treatment as the setup shots.",
+      "observation": "7434a0f7: slow zooms through 0.5-11 s, then a strong zoom from about 11.7 to 12.8 s at the line \"Your vow is over. Marry me.\" (B10), back to wide at about 12.9 s.",
+      "evidence_provenance": "Owner-confirmed latest paste (B10), OWNER_RESPONSE_LEDGER_2026-10-31.md. Timing from the paste; not measured by the repo detector.",
+      "technique": "Reserve the strongest, closest framing for the turn; keep setup shots wider and calmer.",
+      "dramatic_purpose": "Emphasis: the picture marks the moment the scene changes.",
+      "kimi_behavior": "Place the closest framing (08 or 07, or 03 on a close image) on the shot that holds the scene's turn ovi. Before the turn, prefer wider framings. Do not put two close-ups before the turn.",
+      "granthstudio_implementation": "Choose framing by image (wide vs close flat image) with 03; the preset zoom values are fixed, so strength comes from the image's framing, not a stronger push.",
+      "compatibility": "PARTIAL (preset zooms are fixed: 03 is 1.0->1.2; emphasis must come from the image framing)",
+      "uncertainty": "One video, one instance.",
+      "canon_safety": "The turn is the ovi the brief names; no added emotion."
+    },
+    {
+      "id": "L4",
+      "team": "writer",
+      "weakness": "W2: in S4 the visitors' change at the turn (A1:112) is only narrated; no shot shows the response after the cause.",
+      "observation": "7434a0f7: 3.0-4.5 s the woman's hand moves first, then the man's (B04); 5.0-6.5 s the sage's hand moves first, then the standing character moves (B05).",
+      "evidence_provenance": "Owner's own words, Review 1 B04 and B05 (RECORDED, OWNER_REVIEW_RESPONSES_R1.md).",
+      "technique": "Cause then response: show the action, then the other person's visible answer to it, in order.",
+      "dramatic_purpose": "Makes the relationship and the turn visible rather than told.",
+      "kimi_behavior": "For every turn, write the cause shot and then a separate response shot whose held_pose shows the stated result (e.g. the visitors' bow after the steady look). Keep the order the ovis give.",
+      "granthstudio_implementation": "Two shots, two held-pose images (03 or 05_bowing_prayer if layered art exists); a cut between them.",
+      "compatibility": "SUPPORTED (as held poses; no motion inside a shot)",
+      "uncertainty": "Owner observations on one video; the order rule is general filmmaking practice.",
+      "canon_safety": "Only responses an ovi states; no invented reaction or motive (rules F3, F9)."
+    },
+    {
+      "id": "L5",
+      "team": "writer",
+      "weakness": "W2: the arrival of a new person is never staged as a reveal; S4 starts with everyone already in frame.",
+      "observation": "7434a0f7: 9.5-11.0 s Devayani walks in from the left with her arm already held out; Kacha stays still; reveal YES (B09).",
+      "evidence_provenance": "Owner-confirmed latest paste and R1 update (B09).",
+      "technique": "Entrance as reveal: the frame first holds the waiting person, then the new person is in the frame.",
+      "dramatic_purpose": "Reveal and escalation.",
+      "kimi_behavior": "When an ovi brings a person into the scene (e.g. the visitors' arrival, Damodarpant's return with water at 135), stage it as two held frames: before (without them) and after (with them), cut between.",
+      "granthstudio_implementation": "Two complete flat images with 03 and a cut. 04_character_entrance needs transparent layers (Blender) and is not available from the flat finals.",
+      "compatibility": "SUPPORTED as a cut between two images; walking is NOT supported",
+      "uncertainty": "One instance.",
+      "canon_safety": "Only entrances an ovi states."
+    },
+    {
+      "id": "L6",
+      "team": "writer",
+      "weakness": "W4: 5 of 11 baseline performance fields say the narrator carries the moment (S4: 4 of 5), so the visible performance is empty at key beats.",
+      "observation": "7a1e2b26: 6.0-7.5 s close-up of the bearded man, calm focus on the drill, not a reaction, introduces the character (S05); 3.5-4.0 s the boy's mouth stays closed: no reaction (S03).",
+      "evidence_provenance": "Owner, Review 2 S03 and S05 (RECORDED-BY-STATEMENT).",
+      "technique": "A held face states the character's condition; a deliberate non-reaction is also a performance.",
+      "dramatic_purpose": "Character state shown, not told; restraint carries tension.",
+      "kimi_behavior": "Every performance field names what the viewer sees on the person (gaze, stillness, posture, folded hands) as stated by the ovi or PACKET; mention the narrator only in addition, never instead.",
+      "granthstudio_implementation": "07_character_reaction (layered) or 03 on a close flat image; a different expression needs a different image.",
+      "compatibility": "SUPPORTED",
+      "uncertainty": "Clay reel; the restraint reading is the owner's.",
+      "canon_safety": "No emotion or motive the ovi does not state (F3)."
+    },
+    {
+      "id": "L7",
+      "team": "director",
+      "weakness": "W6: 10 of 11 baseline transitions are cuts and the one slide (S1-3) is inside a scene; transitions do not mark structure.",
+      "observation": "7434a0f7: frozen detector dip_to_dark (CONFIRMED) at 8.97, 12.9, 18.47, 29.93, 36.13, 40.8 and 46.9 s; owner reads 9.0, 12.9, 29.9, 36.1, 40.8 and 46.9 s as blackout then next scene.",
+      "evidence_provenance": "Frozen detector STEP4_MEASUREMENTS.json plus owner visual read round 2. The 4.93 s and 12.9 s meaning is OPEN (cut vs lighting effect / blackout).",
+      "technique": "Through-black transition between scenes or time jumps; plain cuts inside a scene.",
+      "dramatic_purpose": "Structure: the viewer feels a new scene start.",
+      "kimi_behavior": "Inside a scene use cut. Use slide or pan_bridge only where the place changes. Do not use them between two shots of the same moment.",
+      "granthstudio_implementation": "Within-scene part supported (cut). A dip to black is NOT in the transition list (cut, slide, pan_bridge); a scene-boundary fade would be an editing step outside the director plan.",
+      "compatibility": "PARTIAL",
+      "uncertainty": "Two disputed points (4.93, 12.9 s).",
+      "canon_safety": "None needed (structure only)."
+    },
+    {
+      "id": "L8",
+      "team": "director",
+      "weakness": "W1: 11 of 11 baseline shots move the camera; there is no held frame for the silent beats (A1:110 no answer, A1:112 silent bow).",
+      "observation": "7a1e2b26: no camera movement between cuts in the opening 12 s.",
+      "evidence_provenance": "Owner round 3 (owner-reported; not human-verified); supervisor rough motion check showed 0 px motion between cuts. 36-cut total owner-approved; frozen detector 33.",
+      "technique": "Locked-off frame for stillness; let the cut, not the camera, change the picture.",
+      "dramatic_purpose": "Silence and stillness read as weight.",
+      "kimi_behavior": "On a silent or no-answer beat, choose the least-moving preset available and do not follow one push with another on the same subject.",
+      "granthstudio_implementation": "No static preset exists: 03 always pushes 1.0->1.2; 07 adds breathing. A locked frame would need a new preset (owner decision; NEED_NEW makes the scene UNRESOLVED).",
+      "compatibility": "NOT SUPPORTED as a true hold; PARTIAL via the gentlest preset",
+      "uncertainty": "Owner-reported only; clay style differs.",
+      "canon_safety": "None needed."
+    }
+  ],
+  "not_a_lesson": [
+    {
+      "observation": "7a1e2b26 opening cuts at about 1.88, 3.04, 4.29, 5.88, 7.62 and 9.96 s (owner-confirmed 1.88, 3.04, 9.96; detector 4.29, 5.88, 7.62): shots of about 1.2 to 2 s.",
+      "reason": "GranthStudio shots are fixed at 6 s (SHOT_SECONDS = 6; the code owns timing). Fast cutting cannot be expressed. Recorded as INCOMPATIBLE."
+    },
+    {
+      "observation": "Dept 15 median beat 1.5 s.",
+      "reason": "A fixed event-segmentation artifact, not rhythm (CUT_COUNT and COLOUR_SOUND_GRAPHICS_PACING records). Not used."
+    }
+  ],
+  "writer_notes": [
+    "EXPERIMENTAL TEACHING (not the owner's canon notes; owner notes win): For each turn, show the cause in one shot and the stated response in the next, in the ovis' order; the response is a held pose the ovi gives (L4).",
+    "EXPERIMENTAL TEACHING: When an ovi brings a person in, stage it as a before frame and an after frame with a cut (L5).",
+    "EXPERIMENTAL TEACHING: Every performance field names what is visible on the person (gaze, stillness, posture), from the ovi or PACKET; the narrator is mentioned only in addition (L6)."
+  ],
+  "director_notes": [
+    "EXPERIMENTAL TEACHING: If the turn depends on a named object or action, you may open on an insert of it and put the establishing view second (L1).",
+    "EXPERIMENTAL TEACHING: Default to 03_slow_cinematic_push on a complete flat image; pick layered presets only when depth is needed and say why in staging (L2).",
+    "EXPERIMENTAL TEACHING: Give the closest framing to the shot holding the turn ovi; keep earlier shots wider (L3).",
+    "EXPERIMENTAL TEACHING: Inside a scene use cut; slide or pan_bridge only where the place changes (L7).",
+    "EXPERIMENTAL TEACHING: On a silent or no-answer beat, use the least-moving preset and do not follow a push with another push on the same subject (L8)."
+  ]
+}

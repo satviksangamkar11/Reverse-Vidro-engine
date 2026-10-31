@@ -1,0 +1,65 @@
+Scene S3, plan P2 (Xfb5aaa8)
+
+Goal: Bankatlal and Damodarpant notice Gajanan, debate his strange conduct, and decide to observe and test him.
+Turn: The friends move from calling him mad to standing on the road to test his actions.
+
+shot 1
+preset: 01_establishing_shot
+ovi_ids: A1:97, A1:98
+action: Dollying into the road tableau
+held_pose: Bankatlal and Damodarpant hold walking poses while Gajanan sits among used leaf plates.
+performance: Narrator introduces Bankatlal and names Damodarpant as his friend.
+camera: Slow dolly toward the friends and the seated figure
+staging: STAGING: Layer the house front, friends, seated Gajanan and leaf plates into a full roadside view.
+transition_out: cut
+
+shot 2
+preset: 02_environmental_parallax
+ovi_ids: A1:98
+action: Panning across the layered roadside watch
+held_pose: Both friends face Gajanan with held astonished expressions.
+performance: Narrator says the sight astonishes both men.
+camera: Lateral move from Gajanan to the amazed friends
+staging: STAGING: Keep the friends and roadside setting continuous across the opening cut.
+transition_out: cut
+
+shot 3
+preset: 03_slow_cinematic_push
+ovi_ids: A1:99, A1:100, A1:101, A1:102
+action: Pushing toward the debating friends
+held_pose: The friends turn toward each other while Gajanan remains seated behind them.
+performance: Narrator voices their madman judgment, their failed reasoning and Bankatlal's introduction.
+camera: Slow push on the two-man debate
+staging: STAGING: Frame the debating friends large, with Gajanan and the leaf plates filling the deeper plane.
+transition_out: cut
+
+shot 4
+preset: 02_environmental_parallax
+ovi_ids: A1:102
+action: Panning across Bankatlal and Damodarpant
+held_pose: Bankatlal faces Damodarpant as both stand on the road watching Gajanan.
+performance: Bankatlal proposes that they remain there and examine what Gajanan does.
+camera: Gentle lateral move across the standing friends
+staging: STAGING: Hold both men standing through the cut so the proposal continues without a pose change.
+transition_out: cut
+dialogue: Let us stand here on the road and watch carefully what he is doing.
+
+shot 5
+preset: 08_emotional_closeup
+ovi_ids: A1:103, A1:104
+action: Pushing into the friends' doubtful faces
+held_pose: Both friends hold thoughtful, uncertain expressions while watching Gajanan.
+performance: Narrator carries the Bhagavat comparison and their doubt that he may be profoundly wise.
+camera: Slow close push on their shared doubt
+staging: STAGING: Keep both faces in the close-up so the unclear speaker is not assigned to either man.
+transition_out: cut
+
+shot 6
+preset: 03_slow_cinematic_push
+ovi_ids: A1:104, A1:105
+action: Pushing toward the two watching men
+held_pose: The friends stand together on the road, watching Gajanan with sustained attention.
+performance: Narrator closes their mutual thought: only a true judge knows the gem before him.
+camera: Slow push on the resolved roadside watch
+staging: STAGING: Fill the final frame with both observers, seated Gajanan, the house front and foreground leaf plates.
+transition_out: cut

@@ -1,0 +1,60 @@
+{
+  "shot_id": "SP",
+  "frames": 144,
+  "on_twos": false,
+  "backdrop": {
+    "top": "#F8E8C8",
+    "bottom": "#DDBB8E",
+    "floor_y": -0.43,
+    "floor_color": "#B99064"
+  },
+  "segments": [
+    {
+      "start": 1,
+      "end": 144,
+      "layers": [
+        {
+          "asset": "left",
+          "depth": 2.2,
+          "x": -0.32,
+          "y": 0,
+          "scale": 1.0,
+          "idle": {
+            "amplitude": 0.004,
+            "period_sec": 4.4
+          }
+        },
+        {
+          "asset": "right",
+          "depth": 2.0,
+          "x": 0.32,
+          "y": 0,
+          "scale": 1.0,
+          "idle": {
+            "amplitude": 0.004,
+            "period_sec": 5.0
+          }
+        }
+      ],
+      "camera": {
+        "start": {
+          "x": -0.05,
+          "y": 0.02,
+          "zoom": 1.0
+        },
+        "end": {
+          "x": 0.05,
+          "y": 0.02,
+          "zoom": 1.13
+        },
+        "ease": "ease_in_out"
+      }
+    }
+  ],
+  "atmosphere": {
+    "gloss": 0.3,
+    "warm_tint": "#FFC56B",
+    "dust": 0.12,
+    "vignette": 0.16
+  }
+}

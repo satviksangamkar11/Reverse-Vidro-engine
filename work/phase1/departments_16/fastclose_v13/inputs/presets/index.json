@@ -1,0 +1,99 @@
+[
+  {
+    "preset": "01_establishing_shot",
+    "use": "Wide place-setting shot: 4 layers (sky far, mid subject, fx light, fg frame), 1.0->1.28 dolly. Needs: sky, mid, fx, fg.",
+    "assets": [
+      "fg",
+      "fx",
+      "mid",
+      "sky"
+    ],
+    "simplest_renderer": "blender"
+  },
+  {
+    "preset": "02_environmental_parallax",
+    "use": "Lateral move through 4 depth layers (schema requires a zoom change >= 0.12 per shot). Needs: sky, far, mid, near.",
+    "assets": [
+      "far",
+      "mid",
+      "near",
+      "sky"
+    ],
+    "simplest_renderer": "blender"
+  },
+  {
+    "preset": "03_slow_cinematic_push",
+    "use": "One image, slow 1.0->1.2 push, no effects. SIMPLEST renderer: motion.py (CPU, ffmpeg). Needs: img.",
+    "assets": [
+      "img"
+    ],
+    "simplest_renderer": "motion.py"
+  },
+  {
+    "preset": "04_character_entrance",
+    "use": "Character walks in toward a seated figure; camera pans with them. Needs: char (walking pose, transparent), other (seated pose, transparent).",
+    "assets": [
+      "char",
+      "other"
+    ],
+    "simplest_renderer": "blender"
+  },
+  {
+    "preset": "05_bowing_prayer",
+    "use": "Bow / pranam: tilt down onto the contact point. Needs: pose (both figures, transparent).",
+    "assets": [
+      "pose"
+    ],
+    "simplest_renderer": "blender"
+  },
+  {
+    "preset": "06_blessing_gesture",
+    "use": "Raised-hand blessing pose with a slow push toward the hand. LIMIT: the soft warp only nudges an already-raised hand (measured ~1 grey level, not visible); a believable raise needs an extra pose image. Needs: pose (raised hand).",
+    "assets": [
+      "pose"
+    ],
+    "simplest_renderer": "blender"
+  },
+  {
+    "preset": "07_character_reaction",
+    "use": "Close-up of a face with a slow push and breathing. Needs: face (close-up, transparent).",
+    "assets": [
+      "face"
+    ],
+    "simplest_renderer": "blender"
+  },
+  {
+    "preset": "08_emotional_closeup",
+    "use": "Slower, closer push with a soft halo for a quiet emotional beat. Needs: face (close-up, transparent).",
+    "assets": [
+      "face"
+    ],
+    "simplest_renderer": "blender"
+  },
+  {
+    "preset": "09_dialogue_composition",
+    "use": "Two figures facing each other, gentle drift across them. Needs: left, right (transparent poses facing each other). No lip-sync.",
+    "assets": [
+      "left",
+      "right"
+    ],
+    "simplest_renderer": "blender"
+  },
+  {
+    "preset": "10_object_hand_insert",
+    "use": "Close-up insert of hands / an object. Needs: insert (full-frame close-up).",
+    "assets": [
+      "insert"
+    ],
+    "simplest_renderer": "blender"
+  },
+  {
+    "preset": "11_scene_transition",
+    "use": "Two scenes joined by a 6-frame pan bridge (no slow dissolve, so no ghosting). Needs: scene_a, scene_b.",
+    "assets": [
+      "scene_a",
+      "scene_b"
+    ],
+    "simplest_renderer": "blender"
+  }
+]

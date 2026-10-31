@@ -1,0 +1,506 @@
+TASK
+Six anonymous shot plans are below: two per scene (labels P1 and P2) for scenes S3, S6 and S8 of Adhyay 1. Each plan is identified by its file name (S3_P1_X335d336, S3_P2_Xfb5aaa8, S6_P1_X13001c8, S6_P2_X4dcb812, S8_P1_X2419ca2, S8_P2_X71f0c2d). With each scene you get its brief and the exact Marathi ovis, plus binding canon constraints, the renderer limits, the registered presets and a fixed rubric.
+
+STEP 1. For EACH plan, independently and before comparing, review it as a director on these points:
+- accuracy against the Marathi ovis of its scene;
+- scene purpose and narrative clarity;
+- character reactions and visible performance;
+- shot composition and framing progression;
+- camera movement and visual emphasis;
+- editing, transitions and continuity;
+- quiet or emotional beats;
+- narration versus visual storytelling;
+- technical feasibility with the registered presets and renderer limits (6-second held-pose shots; cut, slide, pan_bridge only);
+- any invented event, gesture, speaker, object or unsupported claim.
+Every criticism must cite: scene id, plan id (the file name), shot number, the relevant ovi (A1:n), and the exact words from the plan and from the ovi or constraint that support or conflict.
+These are written plans, not videos. Any judgement that would need a rendered frame or video (for example how a framing really looks) is marked NOT_VISUALLY_VERIFIED. Do not describe timestamps or shots as if you had watched them.
+
+STEP 2. Score each plan from 1 to 5 on Q1-Q6, using the rubric definitions EXACTLY as written. Give one concise evidence sentence per score. Score each plan on its own merits before looking at the other plan of the scene.
+
+STEP 3. Only after both plans of a scene are scored, choose P1, P2 or TIE for that scene, with a one-sentence reason.
+
+RULES
+- Judge cinematic quality and source faithfulness only.
+- Either plan can win. Do not try to work out how or why the two plans of a scene differ in origin; ignore any such guess.
+- Never change a criterion between plans.
+- Use only the material below. Do not add canon facts from memory; if something cannot be checked from the material, say so.
+
+OUTPUT: reply with ONE JSON object only (no text before or after, no code fence), with exactly these keys:
+"scores": a list of 6 objects {"scene","label","plan_id","Q1","Q2","Q3","Q4","Q5","Q6","evidence":{"Q1": "...", ..., "Q6": "..."}}, scores integers 1-5;
+"preferences": {"S3": {"choice": "P1|P2|TIE", "reason": "..."}, "S6": {...}, "S8": {...}};
+"director_audit_markdown": a Markdown string with one section per scene and one subsection per plan covering every review point of STEP 1, with citations;
+"source_conflicts": a list of objects {"scene","plan_id","shot","ovi","type" (one of invented_event, invented_gesture, wrong_speaker, invented_object, unsupported_claim, owner_note_conflict, feasibility, other),"plan_text","source_text","severity" (high|medium|low),"note"} (an empty list if none);
+"limitations_markdown": a Markdown string listing what you could not verify (including NOT_VISUALLY_VERIFIED items) and any other limits of this review.
+
+
+=== RUBRIC (frozen) ===
+Q1 narrative clarity: Can a viewer follow what happens and why? | 1 = The viewer cannot tell what happens or why. | 3 = The main events are clear, but one link or motive is missing. | 5 = Every event and its reason follow in order without confusion.
+Q2 emotional communication: Is the stated feeling conveyed without invention? | 1 = The feeling is missing, or the pictures contradict it. | 3 = The feeling is visible but only partly shown, or a little is invented. | 5 = The feeling is shown plainly and nothing beyond the source is added.
+Q3 visual storytelling: Do the pictures carry the scene, not only the narration? | 1 = The pictures only repeat the narration or leave out what the story needs. | 3 = Some beats are carried by the pictures and some only by the narration. | 5 = The pictures alone show the main action, the reaction and the place.
+Q4 shot progression: Does the order of framings and transitions clarify events, reactions, reveals and space? | 1 = Framings and transitions confuse who is where or what changed. | 3 = The order is mostly clear, but one reaction or space change is unclear. | 5 = Each framing and transition makes the next event, reaction or space easy to read.
+Q5 canon fidelity: Is there nothing beyond the ovis and PACKET, and is every claim sourced? | 1 = Several claims are unsourced or invented. | 3 = Claims are sourced, but one detail is loose or unsourced. | 5 = Every claim traces to an ovi or PACKET and nothing is added.
+Q6 production feasibility: Can it be built with the registered presets and flat final images? | 1 = It needs new presets or images the registry does not have. | 3 = It is buildable with a few new images or a close substitute. | 5 = It is buildable now with registered presets and flat final images.
+
+=== CONSTRAINTS ===
+OWNER-APPROVED DIRECTION NOTES (canon constraints for Adhyay 1; binding):
+- Opening: exactly two shots. The year 1878 appears only as an on-screen caption (the owner's instruction; the Granth says 'within Shaka 1800s'); no day or month; do not invent a birthplace, childhood, parents or a journey into Shegaon; no Sajjangad, Samarth Ramdas or Nath-yogi material in the narration or the pictures.
+- Dress: a worn old bandi (88) and otherwise almost bare (digambar, 92), throughout; a self-made UNFIRED clay chilim (90) and a gourd (89). The sunrise comparison (91) is not a time-of-day instruction.
+- Show the 'food is Brahman' explanation (94-96) with the grain-picking action (93-94).
+- The visitors bow to him in silence at 112 (no spoken words); at 143 the men are only READY to fall at his feet.
+- Show the mixing of the dishes before he eats (118); keep both narrator comparisons (116-117).
+- Damodarpant (not Bankatlal) fetches the water: he enters Devidas's house (133) and returns with the gadva (135). The trough is beside the well; he belches with satisfaction (134-135); he is not stated to drink the water Damodarpant brings.
+- Keep his teaching complete (138-142) and do not shorten it to fit a six-second shot; at 144 he runs with NO destination.
+- Ovis 103-104, 113 and 122-124 keep their unclear speaker: do not give those words to a named person.
+- Narrator-only coverage: ovi 1-69, 106-107, 145-146.
+
+RENDERER CAPABILITIES (facts about what can be produced; do not ask for more)
+- One shot = exactly ONE render of 144 frames = 6 seconds at 24 fps. A scene is 2-16 shots (12-96 s); the narration timing says how many.
+- Pictures are owner-made flat-colour illustrations used as HELD POSES and layers. There is NO limb animation, NO walking cycle, NO lip-sync, NO facial-expression change inside a shot; only gentle breathing/sway, camera push/pan/parallax, and cuts between poses.
+- Every image_id starts with the scene prefix, "s<n>_" (e.g. s4_maharaj_seated); ids are never shared between scenes.
+- A different pose or expression needs a different image: declare it in "images_needed" and use it in another shot.
+- Each shot picks ONE of the presets listed (name exactly). Select presets using their supplied transforms, layer formats and fixed effects: the parameters are fixed, so do not invent zoom values and do not assume that prose can switch an effect off. If no preset matches the treatment the scene needs, use NEED_NEW. "assets" must contain EXACTLY the roles of that preset, each mapped to an image_id declared in "images_needed". An image_id is lowercase letters, digits and underscores, starting with a letter, at most 40 characters (e.g. "maharaj_seated_wide"); its description says who/where, pose and framing. Declare each image once and use every declared image in some shot. If no preset can show what the scene needs, use "preset": "NEED_NEW" with "need_new_reason" and "needs" naming what is missing (do not pretend a preset can do it); the code reports such a scene as UNRESOLVED.
+- Transitions between shots: cut | slide | pan_bridge only (no dissolves).
+
+REGISTERED PRESETS (the only presets that exist; fixed parameters):
+- 01_establishing_shot: Wide place-setting shot: 4 layers (sky far, mid subject, fx light, fg frame), 1.0->1.28 dolly. Needs: sky, mid, fx, fg. | image roles: fg, fx, mid, sky | FIXED zoom 1.00->1.28; fixed effects: gloss 0.45, dust 0.2, vignette 0.22, halo
+- 02_environmental_parallax: Lateral move through 4 depth layers (schema requires a zoom change >= 0.12 per shot). Needs: sky, far, mid, near. | image roles: far, mid, near, sky | FIXED zoom 1.00->1.13; fixed effects: gloss 0.25, dust 0.1, vignette 0.14
+- 03_slow_cinematic_push: One image, slow 1.0->1.2 push, no effects. SIMPLEST renderer: motion.py (CPU, ffmpeg). Needs: img. | image roles: img | FIXED zoom 1.00->1.20; fixed effects: vignette 0.12
+- 04_character_entrance: Character walks in toward a seated figure; camera pans with them. Needs: char (walking pose, transparent), other (seated pose, transparent). | image roles: char, other | FIXED zoom 1.00->1.14; fixed effects: gloss 0.3, dust 0.12, vignette 0.16, halo
+- 05_bowing_prayer: Bow / pranam: tilt down onto the contact point. Needs: pose (both figures, transparent). | image roles: pose | FIXED zoom 1.12->1.26; fixed effects: gloss 0.3, dust 0.12, vignette 0.16
+- 06_blessing_gesture: Raised-hand blessing pose with a slow push toward the hand. LIMIT: the soft warp only nudges an already-raised hand (measured ~1 grey level, not visible); a believable raise needs an extra pose image. Needs: pose (raised hand). | image roles: pose | FIXED zoom 1.12->1.42; fixed effects: gloss 0.3, dust 0.12, vignette 0.16, halo
+- 07_character_reaction: Close-up of a face with a slow push and breathing. Needs: face (close-up, transparent). | image roles: face | FIXED zoom 1.00->1.14; fixed effects: gloss 0.2, dust 0.05, vignette 0.2
+- 08_emotional_closeup: Slower, closer push with a soft halo for a quiet emotional beat. Needs: face (close-up, transparent). | image roles: face | FIXED zoom 1.00->1.25; fixed effects: gloss 0.3, dust 0.08, vignette 0.24, halo
+- 09_dialogue_composition: Two figures facing each other, gentle drift across them. Needs: left, right (transparent poses facing each other). No lip-sync. | image roles: left, right | FIXED zoom 1.00->1.13; fixed effects: gloss 0.3, dust 0.12, vignette 0.16
+- 10_object_hand_insert: Close-up insert of hands / an object. Needs: insert (full-frame close-up). | image roles: insert | FIXED zoom 1.04->1.18; fixed effects: gloss 0.25, dust 0.1, vignette 0.18
+- 11_scene_transition: Two scenes joined by a 6-frame pan bridge (no slow dissolve, so no ghosting). Needs: scene_a, scene_b. | image roles: scene_a, scene_b | FIXED zoom 1.00->1.00; fixed effects: gloss 0.2, dust 0.08, vignette 0.16
+
+=== SCENE S3: BRIEF AND MARATHI OVIS ===
+=== SCENE BRIEF (approved split, narration and owner notes) ===
+S3: ovi 97-105 (approved split 285046ade811...). Bankatlal and Damodarpant see him, debate whether he is mad or profoundly wise, and resolve to test his conduct rather than dismiss him.
+
+=== MARATHI OVIS OF THIS SCENE (exact text; quote only from here) ===
+A1:97: बंकटलाल आगरवाला । होता रस्त्यानें चालला । त्यानें हा प्रकार पाहिला । आपल्या त्या स्नेह्यासह
+A1:98: दामोदरपंत कुलकर्णी । त्यांच्या स्नेह्याचें नांव जाणी । दोघे तो प्रकार पाहोनी । आश्चर्यचकित जाहले
+A1:99: आणि एकमेकांप्रत । बोलूं लागले ऐसें सत्य । कीं याची करणी विपरीत । वेडयापरी दिसतसे
+A1:100: हा अन्नार्थी जरी असतां । तरी पात्र मागून घेता । देवीदासही यातें देता । कां कीं तोही सज्जन
+A1:101: द्वारीं आलेला याचक । लावी ना सुज्ञ परत देख । कांहीं न चाले तर्क । कृतीवरुनी याच्या ह्या
+A1:102: बंकटलाल म्हणे पंतासी । ऐसेच उभें रस्‍त्यासी । आपण राहूं यत्कृतीसी । अजमावयाकारणें
+A1:103: खरे साधु पिशापरी । जगीं वागती वरवरी । ऐसी व्यासाची वैखरी । बोलली आहे भागवतांत
+A1:104: कृतीनें हा दिसे वेडा । परी वाटे ज्ञानगाडा । वा विमल ज्ञानाचा हुडा । असावा कीं प्रत्यक्ष
+A1:105: ऐसा विचार परस्पर । करुं लागले साचार । रत्‍न असतां समोर । पारखी तोच जाणे त्या
+
+
+=== PLAN FILE S3_P1_X335d336 ===
+Scene S3, plan P1 (X335d336)
+
+Goal: Show the two friends move from surprise and a first judgment of madness to watching Gajanan closely and questioning that judgment.
+Turn: Bankatlal resolves that they should remain on the road and test Gajanan's conduct instead of dismissing him.
+
+shot 1
+preset: 02_environmental_parallax
+ovi_ids: A1:97, A1:98
+action: Panning laterally across the road and the two friends held mid-step
+held_pose: Bankatlal and Damodarpant walk together toward the seated Gajanan, their attention already drawn to him.
+performance: The narrator introduces Bankatlal, his friend Damodarpant Kulkarni, and the sight that stops their attention.
+camera: pan right with gentle layered depth
+staging: STAGING: distant sky, road-edge backdrop and foreground plates fill the frame; neutral daylight.
+transition_out: cut
+
+shot 2
+preset: 03_slow_cinematic_push
+ovi_ids: A1:98
+action: Pushing slowly toward both astonished friends with Gajanan visible beyond them
+held_pose: The two men stand astonished, looking toward Gajanan, who remains seated calmly among the used leaf plates.
+performance: Their shared astonishment is plainly visible as the narrator completes the introduction and describes their reaction.
+camera: slow push in
+staging: STAGING: keep both reactions readable in a full roadside composition without isolating either face.
+transition_out: cut
+
+shot 3
+preset: 02_environmental_parallax
+ovi_ids: A1:99, A1:100, A1:101, A1:102
+action: Drifting across the two friends held in discussion and Gajanan seated nearby
+held_pose: Bankatlal and Damodarpant face each other in discussion, with Gajanan still seated within their view.
+performance: The narrator carries their madman judgment and failed reasoning, then begins Bankatlal's proposal to observe him.
+camera: slow lateral drift
+staging: STAGING: retain the roadside layers so Gajanan remains visible behind their exchange.
+transition_out: slide
+
+shot 4
+preset: 02_environmental_parallax
+ovi_ids: A1:102
+action: Panning gently across Bankatlal addressing Damodarpant as both stand on the road
+held_pose: Bankatlal stands turned toward Damodarpant, while both remain positioned to watch the seated Gajanan.
+performance: Bankatlal's proposal plays over the held pose; neither man approaches or begins a physical test.
+camera: gentle pan right
+staging: STAGING: hold Bankatlal in a speaking pose without lip movement; keep both observers and Gajanan readable.
+transition_out: cut
+dialogue: Let us stand right here on the road and watch carefully what exactly he is doing.
+
+shot 5
+preset: 03_slow_cinematic_push
+ovi_ids: A1:103, A1:104
+action: Pushing slowly toward the two watchful friends and the calm seated figure
+held_pose: Both friends watch Gajanan with their earlier astonishment settled into close, uncertain attention.
+performance: The narrator carries the Bhagavat saying and the thought that he may look mad yet be profoundly wise.
+camera: slow push in
+staging: STAGING: use restrained expressions and ordinary daylight; no radiance or effect explains their revised judgment.
+transition_out: cut
+
+shot 6
+preset: 01_establishing_shot
+ovi_ids: A1:104, A1:105
+action: Dollying gently into the full roadside tableau of observers and observed
+held_pose: The friends remain standing together in shared appraisal, watching Gajanan without approaching him.
+performance: The closing image holds their mutual reconsideration; their decision to test his conduct remains unresolved by observation.
+camera: slow dolly in
+staging: STAGING: end on a full foreground, midground and distant roadside composition with no further action.
+transition_out: cut
+
+
+=== PLAN FILE S3_P2_Xfb5aaa8 ===
+Scene S3, plan P2 (Xfb5aaa8)
+
+Goal: Bankatlal and Damodarpant notice Gajanan, debate his strange conduct, and decide to observe and test him.
+Turn: The friends move from calling him mad to standing on the road to test his actions.
+
+shot 1
+preset: 01_establishing_shot
+ovi_ids: A1:97, A1:98
+action: Dollying into the road tableau
+held_pose: Bankatlal and Damodarpant hold walking poses while Gajanan sits among used leaf plates.
+performance: Narrator introduces Bankatlal and names Damodarpant as his friend.
+camera: Slow dolly toward the friends and the seated figure
+staging: STAGING: Layer the house front, friends, seated Gajanan and leaf plates into a full roadside view.
+transition_out: cut
+
+shot 2
+preset: 02_environmental_parallax
+ovi_ids: A1:98
+action: Panning across the layered roadside watch
+held_pose: Both friends face Gajanan with held astonished expressions.
+performance: Narrator says the sight astonishes both men.
+camera: Lateral move from Gajanan to the amazed friends
+staging: STAGING: Keep the friends and roadside setting continuous across the opening cut.
+transition_out: cut
+
+shot 3
+preset: 03_slow_cinematic_push
+ovi_ids: A1:99, A1:100, A1:101, A1:102
+action: Pushing toward the debating friends
+held_pose: The friends turn toward each other while Gajanan remains seated behind them.
+performance: Narrator voices their madman judgment, their failed reasoning and Bankatlal's introduction.
+camera: Slow push on the two-man debate
+staging: STAGING: Frame the debating friends large, with Gajanan and the leaf plates filling the deeper plane.
+transition_out: cut
+
+shot 4
+preset: 02_environmental_parallax
+ovi_ids: A1:102
+action: Panning across Bankatlal and Damodarpant
+held_pose: Bankatlal faces Damodarpant as both stand on the road watching Gajanan.
+performance: Bankatlal proposes that they remain there and examine what Gajanan does.
+camera: Gentle lateral move across the standing friends
+staging: STAGING: Hold both men standing through the cut so the proposal continues without a pose change.
+transition_out: cut
+dialogue: Let us stand here on the road and watch carefully what he is doing.
+
+shot 5
+preset: 08_emotional_closeup
+ovi_ids: A1:103, A1:104
+action: Pushing into the friends' doubtful faces
+held_pose: Both friends hold thoughtful, uncertain expressions while watching Gajanan.
+performance: Narrator carries the Bhagavat comparison and their doubt that he may be profoundly wise.
+camera: Slow close push on their shared doubt
+staging: STAGING: Keep both faces in the close-up so the unclear speaker is not assigned to either man.
+transition_out: cut
+
+shot 6
+preset: 03_slow_cinematic_push
+ovi_ids: A1:104, A1:105
+action: Pushing toward the two watching men
+held_pose: The friends stand together on the road, watching Gajanan with sustained attention.
+performance: Narrator closes their mutual thought: only a true judge knows the gem before him.
+camera: Slow push on the resolved roadside watch
+staging: STAGING: Fill the final frame with both observers, seated Gajanan, the house front and foreground leaf plates.
+transition_out: cut
+
+
+=== SCENE S6: BRIEF AND MARATHI OVIS ===
+=== SCENE BRIEF (approved split, narration and owner notes) ===
+S6: ovi 119-122 (approved split 285046ade811...). Bankatlal tells Damodarpant that calling him mad was a mistake; like Arjuna for Subhadra, Gajanan seeks liberation; no further test is needed. Ovi 122 praises Shegaon and Hari's gift of desirelessness; speaker unclear.
+
+=== MARATHI OVIS OF THIS SCENE (exact text; quote only from here) ===
+A1:119: बंकटलाल तें पाहून । पंतासी करी भाषण । ह्या वेडा म्हणालों आपण । ती निःसंशय झाली चुकी
+A1:120: सुभद्रेसाठीं द्वारकेला । अर्जुन ऐसाच वेडा झाला । व्यवहाराचा विसर पडला । करुं लागला भलभलतें
+A1:121: तैसाच हा ज्ञानजेठी । मुक्तिरुप सुभद्रेसाठीं । वेडा झाला कसवटी । याची आतां घेणें नको
+A1:122: धन्य आपुलें शेगांव । दृष्टी पाहिला योगीराव । "निरिच्छा" हा जहागीरगांव । दिला हरीनें जयाला
+
+
+=== PLAN FILE S6_P1_X13001c8 ===
+Scene S6, plan P1 (X13001c8)
+
+Goal: Show Bankatlal withdraw the mad judgment, recognize Gajanan's search for liberation and end further testing, then close on praise of Shegaon and its yogi.
+Turn: Bankatlal reverses the earlier verdict and tells Damodarpant that Gajanan must not be tested again.
+
+shot 1
+preset: 01_establishing_shot
+ovi_ids: A1:119
+action: Dollying toward the three men at Devidas's door
+held_pose: Bankatlal faces Damodarpant in held address while Gajanan remains seated beside the plate of mixed dishes.
+performance: Bankatlal admits the mistake directly to Damodarpant; Gajanan stays calm and silent.
+camera: Slow dolly in, keeping all three figures readable.
+staging: STAGING: Fill the foreground with the door edge and road, the middle with the three figures, and the rear with the named house setting.
+transition_out: cut
+dialogue: Calling him mad was certainly our great mistake.
+
+shot 2
+preset: 09_dialogue_composition
+ovi_ids: A1:120
+action: Drifting across Bankatlal and Damodarpant in their held exchange
+held_pose: Bankatlal continues facing Damodarpant, who holds a silent listening posture.
+performance: The admission carries into the Arjuna comparison without a separate story vision.
+camera: Gentle lateral drift across the two listeners and speaker.
+staging: STAGING: Keep both figures in the same door-side positions and dress as the preceding wide shot.
+transition_out: cut
+dialogue: To win Subhadra, Arjuna too behaved like a madman in Dwarka.
+
+shot 3
+preset: 03_slow_cinematic_push
+ovi_ids: A1:121
+action: Pushing toward Bankatlal as he holds his concluding address
+held_pose: Bankatlal faces Damodarpant with one open palm lowered, while Gajanan remains seated nearby.
+performance: The comparison resolves into a clear decision: this knower seeks liberation and needs no further test.
+camera: Slow push toward the speaking Bankatlal with Gajanan still visible.
+staging: STAGING: Let the lowered open palm mark the conclusion without adding a new event.
+transition_out: cut
+dialogue: This excellent knower is mad for liberation as Subhadra; do not test him again.
+
+shot 4
+preset: 02_environmental_parallax
+ovi_ids: A1:122
+action: Moving laterally through the layered Shegaon doorway view
+held_pose: Gajanan sits at the door while Bankatlal and Damodarpant remain turned toward him.
+performance: The narrator carries the unclear-speaker praise as the view presents Shegaon's yogi without a crown or radiance effect.
+camera: Lateral parallax from the visitors toward the seated yogi.
+staging: STAGING: Use house fronts and the road as layered scenery; add no symbolic estate, crown or divine light.
+transition_out: cut
+
+shot 5
+preset: 07_character_reaction
+ovi_ids: A1:122
+action: Breathing gently in Gajanan's held close-up
+held_pose: Gajanan holds a steady gaze and calm posture, with the old bandi and an edge of the door setting visible.
+performance: The close view emphasizes the yogi named in the continuing praise; desirelessness remains spoken, not visualized.
+camera: Close push with quiet breathing.
+staging: STAGING: Keep the close-up plain and restrained, with no added radiance or expression change.
+transition_out: cut
+
+shot 6
+preset: 01_establishing_shot
+ovi_ids: A1:122
+action: Dollying toward the full group as the praise concludes
+held_pose: The two visitors remain facing the seated Gajanan beside the door and the plate of mixed dishes.
+performance: The final wide view holds Shegaon, its visitors and the desireless yogi together in silence.
+camera: Slow closing dolly across the complete doorway composition.
+staging: STAGING: Restore the opening wide composition for a quiet conclusion without any new gesture or event.
+transition_out: cut
+
+
+=== PLAN FILE S6_P2_X4dcb812 ===
+Scene S6, plan P2 (X4dcb812)
+
+Goal: Bankatlal corrects the visitors’ first judgment, recognizes Gajanan’s single-minded pursuit of liberation, and receives him as Shegaon’s Yogirav.
+Turn: Bankatlal rejects the verdict of madness and decides that Gajanan must not be tested again.
+
+shot 1
+preset: 01_establishing_shot
+ovi_ids: A1:119
+action: Dollying into the road-side tableau
+held_pose: Bankatlal faces Damodarpant in an explanatory pose while Gajanan sits calmly beside the mixed dishes.
+performance: The narrator introduces the exchange, and Bankatlal admits that calling Gajanan mad was their mistake.
+camera: push in
+staging: STAGING: Fill the road and house-front in three depths, keeping the two men turned toward one another.
+transition_out: cut
+dialogue: Calling him mad was surely our great mistake.
+
+shot 2
+preset: 01_establishing_shot
+ovi_ids: A1:120
+action: Dollying toward Arjuna in the Dwarka courtyard
+held_pose: Arjuna stands still with a withdrawn posture, his attention removed from worldly conduct.
+performance: Bankatlal’s comparison continues over a still cutaway of Arjuna’s madness for Subhadra.
+camera: push in
+staging: STAGING: Present Dwarka as a full courtyard cutaway without adding Subhadra or another person.
+transition_out: cut
+dialogue: To win Subhadra, Arjuna too behaved like a madman in Dwarka.
+
+shot 3
+preset: 03_slow_cinematic_push
+ovi_ids: A1:121
+action: Pushing toward Bankatlal and the seated Gajanan
+held_pose: Bankatlal holds a concluding pose toward Damodarpant while Gajanan remains seated beside the plate.
+performance: Bankatlal compares Gajanan’s pursuit of liberation with Arjuna’s pursuit and rules out another test.
+camera: push in
+staging: STAGING: Keep Gajanan passive and seated while Bankatlal concludes the exchange.
+transition_out: slide
+dialogue: This wise man is mad for liberation as Subhadra; do not test him further.
+
+shot 4
+preset: 02_environmental_parallax
+ovi_ids: A1:122
+action: Panning laterally through the layered Shegaon view
+held_pose: Bankatlal and Damodarpant remain turned toward Gajanan, who sits calmly at the house-front.
+performance: The narrator praises Shegaon and the darshan of the king of yogis.
+camera: pan right
+staging: STAGING: Fill the far village, middle house-front and near observers as one complete darshan view.
+transition_out: cut
+
+shot 5
+preset: 03_slow_cinematic_push
+ovi_ids: A1:122
+action: Pushing toward Gajanan within the filled house-front scene
+held_pose: Gajanan sits absorbed and still, with the gourd and self-made unfired clay chilim beside him.
+performance: The narrator’s praise continues as the view rests on Gajanan, called Yogirav.
+camera: push in
+staging: STAGING: Retain the observers, house-front and foreground plate so the closer view stays fully drawn.
+transition_out: cut
+
+shot 6
+preset: 01_establishing_shot
+ovi_ids: A1:122
+action: Dollying into the final shared darshan tableau
+held_pose: The two men face the seated yogi in a full view of the house-front and road.
+performance: The narrator’s blessing of Shegaon settles on the shared darshan without a new action.
+camera: push in
+staging: STAGING: End on a balanced, fully layered view with the men and Gajanan holding the same regard.
+transition_out: cut
+
+
+=== SCENE S8: BRIEF AND MARATHI OVIS ===
+=== SCENE BRIEF (approved split, narration and owner notes) ===
+S8: ovi 134-137 (approved split 285046ade811...). Gajanan drinks at the cattle trough beside the well; Damodarpant returns with cool, vetiver-scented water and protests that the muddy water is fit only for animals.
+
+=== MARATHI OVIS OF THIS SCENE (exact text; quote only from here) ===
+A1:134: कूपाचिया शेजारीं । हाळ होता निर्धारीं । जेथें जनावरें सारीं । पीत होतीं पाण्याला
+A1:135: तेथें जाऊन पाणी प्याले । तृप्ततेचे ढेकर दिले । तों इतक्यांत घेऊन आले । पंत पाणी गडव्यांत
+A1:136: हां हां तें गढूळ पाणी । समर्था न लावा वदनीं । तें जनावरालागुनी । योग्य आहे प्यावया
+A1:137: मीं हें पहा आणिलें नीर । गोड निर्मळ थंडगार । वासित केलें साचार । वाळा घालून यामध्यें
+
+
+=== PLAN FILE S8_P1_X2419ca2 ===
+Scene S8, plan P1 (X2419ca2)
+
+Goal: Show Maharaj drinking at the cattle trough and Damodarpant returning with clean vetiver-scented water and objecting to the muddy water.
+Turn: Damodarpant stops Maharaj from putting the muddy cattle-trough water to his mouth and offers the water he has brought.
+
+shot 1
+preset: 01_establishing_shot
+ovi_ids: A1:134
+action: Dollying toward the well and cattle trough
+held_pose: The well stands beside the trough, with all the animals held at its water in drinking poses.
+performance: The narrator introduces the trough beside the well where all the animals drink.
+camera: Slow dolly toward the trough, keeping the well and animals visible
+staging: STAGING: Fill the depth layers with the well, trough, drinking animals and plain wellside ground under even daylight.
+transition_out: cut
+
+shot 2
+preset: 02_environmental_parallax
+ovi_ids: A1:135
+action: Panning laterally across the breathing figures at the trough
+held_pose: Maharaj rests satisfied after drinking while Damodarpant stands arrived with water in a brass gadva.
+performance: The narrator tells that Maharaj drank and belched with satisfaction, then that Damodarpant arrived with the gadva.
+camera: Lateral pan from Maharaj at the trough to Damodarpant and back across the group
+staging: STAGING: Hold Maharaj's satisfied after-drinking pose and Damodarpant's arrival pose without depicting Maharaj drinking from the gadva.
+transition_out: cut
+
+shot 3
+preset: 09_dialogue_composition
+ovi_ids: A1:136
+action: Drifting gently across Damodarpant protesting before Maharaj
+held_pose: Damodarpant holds the brass gadva toward Maharaj in protest, and Maharaj remains beside the muddy trough.
+performance: Damodarpant's held protest makes clear that the muddy trough water is fit for animals, not for Maharaj to drink.
+camera: Gentle drift across the two facing figures
+staging: STAGING: Keep Damodarpant's protest and Maharaj's position beside the trough unchanged as the narration continues over the next cut.
+transition_out: cut
+dialogue: Oh Samarth, stop! Do not drink that muddy water; it is fit only for animals.
+
+shot 4
+preset: 10_object_hand_insert
+ovi_ids: A1:137
+action: Pushing gently toward the offered brass gadva
+held_pose: Damodarpant holds the brass gadva forward, its clear water shown with vetiver roots.
+performance: The offered water is presented as sweet, clear, cool and scented with vetiver while Damodarpant speaks.
+camera: Close push toward the gadva and its clear water
+staging: STAGING: Make the clear water and vetiver roots readable inside the same brass gadva without showing Maharaj drinking it.
+transition_out: cut
+dialogue: See, I have brought sweet, clean, cool water for you, scented with vetiver.
+
+shot 5
+preset: 09_dialogue_composition
+ovi_ids: A1:137
+action: Drifting gently across the held offer of water
+held_pose: Damodarpant remains presenting the brass gadva while Maharaj stays beside the trough without drinking from it.
+performance: The continuing narration rests on the contrast between Damodarpant's vetiver water and the muddy trough.
+camera: Gentle drift across both figures with the gadva prominent
+staging: STAGING: End on the unresolved offer; do not show Maharaj accepting or drinking the gadva water.
+transition_out: cut
+
+
+=== PLAN FILE S8_P2_X71f0c2d ===
+Scene S8, plan P2 (X71f0c2d)
+
+Goal: Show Gajanan drinking at the cattle trough and Damodarpant returning to protest and offer vetiver-scented water.
+Turn: Damodarpant offers Gajanan sweet, clear, cool water scented with vetiver instead of the muddy trough water.
+
+shot 1
+preset: 01_establishing_shot
+ovi_ids: A1:134
+action: Dolly in toward the cattle drinking beside the well
+held_pose: Cattle hold drinking poses at the trough beside the well.
+performance: The narrator identifies the trough as the animals’ drinking place.
+camera: Slow dolly toward the well and trough
+staging: STAGING: Fill the depth layers with the well-side setting and trough-edge foreground.
+transition_out: cut
+
+shot 2
+preset: 02_environmental_parallax
+ovi_ids: A1:135
+action: Pan right across Gajanan and the arriving Damodarpant
+held_pose: Gajanan holds a satisfied pose at the trough while Damodarpant stands nearby carrying the brass gadva.
+performance: The narrator carries the drinking, satisfied belch and Damodarpant’s arrival.
+camera: Lateral pan from Gajanan to Damodarpant
+staging: STAGING: Keep Gajanan’s drinking finished and Damodarpant’s arrival as held poses.
+transition_out: cut
+
+shot 3
+preset: 01_establishing_shot
+ovi_ids: A1:136
+action: Dolly in on Damodarpant’s held stopping gesture
+held_pose: Damodarpant holds the gadva and a stopping hand toward Gajanan, who remains beside the muddy trough.
+performance: Damodarpant protests while Gajanan stays still at the trough.
+camera: Slow push toward the two figures
+staging: STAGING: Hold the protest without lip movement or a rising hand.
+transition_out: cut
+dialogue: Oh Samarth, stop! Do not drink that muddy water; it is fit only for animals.
+
+shot 4
+preset: 10_object_hand_insert
+ovi_ids: A1:137
+action: Push in on the offered gadva and its clear vetiver water
+held_pose: Damodarpant holds the brass gadva forward with clear water and vetiver visible inside.
+performance: The offered water remains held forward as Damodarpant explains its qualities.
+camera: Close push toward the gadva opening
+staging: STAGING: Frame the insert tightly on the vessel, water, vetiver and holding hands.
+transition_out: cut
+dialogue: See, I have brought sweet, clean, cool water for you, scented with vetiver.
+
+shot 5
+preset: 03_slow_cinematic_push
+ovi_ids: A1:137
+action: Push in toward the contrasting trough water and offered gadva
+held_pose: Gajanan remains beside the muddy trough while Damodarpant holds the clear vetiver water in the gadva.
+performance: The offered water stays before Gajanan without showing him drinking it.
+camera: Slow push across the full well-side composition
+staging: STAGING: Keep both waters visible in a filled foreground, midground and background composition.
+transition_out: cut

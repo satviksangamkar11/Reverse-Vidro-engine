@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "name": "FASTCLOSE_V13_EVAL_PROTOCOL",
+  "scenes": [
+    "S3",
+    "S6",
+    "S8"
+  ],
+  "arms": {
+    "A": "baseline",
+    "B": "baseline plus the five experimental director lessons"
+  },
+  "compliance_definitions": {
+    "C1_opening": "First shot's preset, and whether its first person, event, prop or scenery claim cites an ovi.",
+    "C2_camera": "Shot count, distinct presets, adjacent same-preset pairs, and adjacent pairs where both presets have gain >= 0.20.",
+    "C3_reaction": "Whether a shot holding the turn ovi has a pose claim sourced to an ovi, and how many shots mention the narrator.",
+    "C4_progression": "Transitions outside cut, slide and pan_bridge; unknown presets; NEED_NEW count; whether a close-up preset carries the turn ovi.",
+    "C5_quiet": "Gains of the visual-only shots, and how many are at or above 0.20. Descriptive only."
+  },
+  "quality_deterministic": [
+    "validator_result",
+    "validator_errors",
+    "warnings",
+    "staging_warnings",
+    "need_new",
+    "flat_compatible_share",
+    "images_needed"
+  ],
+  "rubric": [
+    {
+      "id": "Q1",
+      "name": "narrative clarity",
+      "question": "Can a viewer follow what happens and why?",
+      "anchor_1": "The viewer cannot tell what happens or why.",
+      "anchor_3": "The main events are clear, but one link or motive is missing.",
+      "anchor_5": "Every event and its reason follow in order without confusion."
+    },
+    {
+      "id": "Q2",
+      "name": "emotional communication",
+      "question": "Is the stated feeling conveyed without invention?",
+      "anchor_1": "The feeling is missing, or the pictures contradict it.",
+      "anchor_3": "The feeling is visible but only partly shown, or a little is invented.",
+      "anchor_5": "The feeling is shown plainly and nothing beyond the source is added."
+    },
+    {
+      "id": "Q3",
+      "name": "visual storytelling",
+      "question": "Do the pictures carry the scene, not only the narration?",
+      "anchor_1": "The pictures only repeat the narration or leave out what the story needs.",
+      "anchor_3": "Some beats are carried by the pictures and some only by the narration.",
+      "anchor_5": "The pictures alone show the main action, the reaction and the place."
+    },
+    {
+      "id": "Q4",
+      "name": "shot progression",
+      "question": "Does the order of framings and transitions clarify events, reactions, reveals and space?",
+      "anchor_1": "Framings and transitions confuse who is where or what changed.",
+      "anchor_3": "The order is mostly clear, but one reaction or space change is unclear.",
+      "anchor_5": "Each framing and transition makes the next event, reaction or space easy to read."
+    },
+    {
+      "id": "Q5",
+      "name": "canon fidelity",
+      "question": "Is there nothing beyond the ovis and PACKET, and is every claim sourced?",
+      "anchor_1": "Several claims are unsourced or invented.",
+      "anchor_3": "Claims are sourced, but one detail is loose or unsourced.",
+      "anchor_5": "Every claim traces to an ovi or PACKET and nothing is added."
+    },
+    {
+      "id": "Q6",
+      "name": "production feasibility",
+      "question": "Can it be built with the registered presets and flat final images?",
+      "anchor_1": "It needs new presets or images the registry does not have.",
+      "anchor_3": "It is buildable with a few new images or a close substitute.",
+      "anchor_5": "It is buildable now with registered presets and flat final images."
+    }
+  ],
+  "decision_rule": "For each scene, the arm the rater prefers wins the scene only if its Q1-Q6 total is at least the other arm's total, its Q5 (canon fidelity) is at least the other arm's, and its validator error count is no higher; otherwise the scene is a TIE, and a TIE preference is a TIE. The verdict is B_BETTER if B wins at least 2 scenes, A_BETTER if A wins at least 2 scenes, and NO_CLEAR_DIFFERENCE otherwise. Compliance counts never enter this rule. The decision is symmetric between the arms and never assumes that arm B is better.",
+  "visual_only": {
+    "S3": [
+      6
+    ],
+    "S6": [
+      5,
+      6
+    ],
+    "S8": [
+      5
+    ]
+  },
+  "code_sha256": "5c95c62fcb956737f2d5d0e62b580af6511a4ef77fe7f1229506441412a3ecc5",
+  "snapshot_manifest_sha256": "c5782b9e0f893b4ea4a86ebbd180a97df701e3c4c5c855654dc5f14745e457ac",
+  "protocol_sha256": "f236523739365b39d92febec7546c9eb425824cee782a1b1000b1da653e01086"
+}

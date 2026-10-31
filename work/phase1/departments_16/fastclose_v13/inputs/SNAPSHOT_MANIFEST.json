@@ -1,0 +1,25 @@
+{
+ "created": "2026-11-01",
+ "purpose": "read-only snapshot for the Fast-Close V1.3 loop jobs; identical bytes to the GranthStudio sources",
+ "sources": {
+  "presets": "D:/aai work/granthstudio/assets/v5_presets",
+  "A1_timing_plan.json": "D:/aai work/granthstudio/canon/audio/A1_timing_plan.json",
+  "sample_scene_result_S4.json": "D:/aai work/granthstudio/canon/director_runs/a1_s4_kimi_one/a01_scene4.json"
+ },
+ "sha256": {
+  "A1_timing_plan.json": "3f1926d367639a847d10fdf237064eb4054a4a453552c5ffee9a0908234eb220",
+  "presets/01_establishing_shot.json": "a7ec003060f9a02a3376b45104a93642ff0bb795e04e6b9b4075f1818174728c",
+  "presets/02_environmental_parallax.json": "19923612ef52a37b089a53246297257239ceb0946547253760b19929a20cb4e2",
+  "presets/03_slow_cinematic_push.json": "19bbba18ed58aa55b35989fe7e2c3508193aaecb556165b42c3c13047f945781",
+  "presets/04_character_entrance.json": "b5cdf2cc535f96176977c3137c46dae3e38dac090d2cd99f8727511068dce1f9",
+  "presets/05_bowing_prayer.json": "edb06a70ae3f27d39dd02fd083f6cbe3b959e6b41cac5cb34ef948215a08a03f",
+  "presets/06_blessing_gesture.json": "842eb1d43feddd832ad211c554173dcc6e299abf3a7768683dab5f0f035ddc93",
+  "presets/07_character_reaction.json": "dbc5bd73a5739481344aae4576cddf558a3c9ea33b3bb9d0d58e5bf049e19166",
+  "presets/08_emotional_closeup.json": "1039236a2970438f9069ca4767efe3ebbb2523130956d27e0272f8954ddcfdb5",
+  "presets/09_dialogue_composition.json": "49837b00c13635abab1075eb1b7391cf756189e7ce71c44902f6136956ca1631",
+  "presets/10_object_hand_insert.json": "2ed82f4f0cfbf8b1bf43623e7594101d0fe7c373e36bbcdedefe7ba2d5b3e180",
+  "presets/11_scene_transition.json": "5eb9edaa179606ce44fda329663355bbf1288888302c1357d43359cf268f19fb",
+  "presets/index.json": "ad5ea32d1af45b3af1fd54c34283e21dfe20daf777c0ee10a3f8c410b3c493ae",
+  "sample_scene_result_S4.json": "0409617540b0b15fc20716f3b539f9683321967b49bcddd126b0ed853369bce7"
+ }
+}

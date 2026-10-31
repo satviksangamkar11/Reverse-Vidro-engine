@@ -1,0 +1,57 @@
+{
+  "shot_id": "SP",
+  "frames": 144,
+  "on_twos": false,
+  "backdrop": {
+    "top": "#F8E8C8",
+    "bottom": "#DDBB8E",
+    "floor_y": -0.43,
+    "floor_color": "#B99064",
+    "halo": {
+      "x": 0.0,
+      "y": 0.1,
+      "radius": 0.6,
+      "color": "#FFD98A",
+      "intensity": 0.22,
+      "pulse_period_sec": 7
+    }
+  },
+  "segments": [
+    {
+      "start": 1,
+      "end": 144,
+      "layers": [
+        {
+          "asset": "face",
+          "depth": 2,
+          "x": 0,
+          "y": 0,
+          "scale": 1.06,
+          "idle": {
+            "amplitude": 0.003,
+            "period_sec": 5.8
+          }
+        }
+      ],
+      "camera": {
+        "start": {
+          "x": 0.0,
+          "y": 0.0,
+          "zoom": 1.0
+        },
+        "end": {
+          "x": 0.0,
+          "y": 0.04,
+          "zoom": 1.25
+        },
+        "ease": "ease_in_out"
+      }
+    }
+  ],
+  "atmosphere": {
+    "gloss": 0.3,
+    "warm_tint": "#FFC56B",
+    "dust": 0.08,
+    "vignette": 0.24
+  }
+}

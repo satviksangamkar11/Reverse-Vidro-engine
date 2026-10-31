@@ -1,0 +1,67 @@
+Scene S6, plan P2 (X4dcb812)
+
+Goal: Bankatlal corrects the visitors’ first judgment, recognizes Gajanan’s single-minded pursuit of liberation, and receives him as Shegaon’s Yogirav.
+Turn: Bankatlal rejects the verdict of madness and decides that Gajanan must not be tested again.
+
+shot 1
+preset: 01_establishing_shot
+ovi_ids: A1:119
+action: Dollying into the road-side tableau
+held_pose: Bankatlal faces Damodarpant in an explanatory pose while Gajanan sits calmly beside the mixed dishes.
+performance: The narrator introduces the exchange, and Bankatlal admits that calling Gajanan mad was their mistake.
+camera: push in
+staging: STAGING: Fill the road and house-front in three depths, keeping the two men turned toward one another.
+transition_out: cut
+dialogue: Calling him mad was surely our great mistake.
+
+shot 2
+preset: 01_establishing_shot
+ovi_ids: A1:120
+action: Dollying toward Arjuna in the Dwarka courtyard
+held_pose: Arjuna stands still with a withdrawn posture, his attention removed from worldly conduct.
+performance: Bankatlal’s comparison continues over a still cutaway of Arjuna’s madness for Subhadra.
+camera: push in
+staging: STAGING: Present Dwarka as a full courtyard cutaway without adding Subhadra or another person.
+transition_out: cut
+dialogue: To win Subhadra, Arjuna too behaved like a madman in Dwarka.
+
+shot 3
+preset: 03_slow_cinematic_push
+ovi_ids: A1:121
+action: Pushing toward Bankatlal and the seated Gajanan
+held_pose: Bankatlal holds a concluding pose toward Damodarpant while Gajanan remains seated beside the plate.
+performance: Bankatlal compares Gajanan’s pursuit of liberation with Arjuna’s pursuit and rules out another test.
+camera: push in
+staging: STAGING: Keep Gajanan passive and seated while Bankatlal concludes the exchange.
+transition_out: slide
+dialogue: This wise man is mad for liberation as Subhadra; do not test him further.
+
+shot 4
+preset: 02_environmental_parallax
+ovi_ids: A1:122
+action: Panning laterally through the layered Shegaon view
+held_pose: Bankatlal and Damodarpant remain turned toward Gajanan, who sits calmly at the house-front.
+performance: The narrator praises Shegaon and the darshan of the king of yogis.
+camera: pan right
+staging: STAGING: Fill the far village, middle house-front and near observers as one complete darshan view.
+transition_out: cut
+
+shot 5
+preset: 03_slow_cinematic_push
+ovi_ids: A1:122
+action: Pushing toward Gajanan within the filled house-front scene
+held_pose: Gajanan sits absorbed and still, with the gourd and self-made unfired clay chilim beside him.
+performance: The narrator’s praise continues as the view rests on Gajanan, called Yogirav.
+camera: push in
+staging: STAGING: Retain the observers, house-front and foreground plate so the closer view stays fully drawn.
+transition_out: cut
+
+shot 6
+preset: 01_establishing_shot
+ovi_ids: A1:122
+action: Dollying into the final shared darshan tableau
+held_pose: The two men face the seated yogi in a full view of the house-front and road.
+performance: The narrator’s blessing of Shegaon settles on the shared darshan without a new action.
+camera: push in
+staging: STAGING: End on a balanced, fully layered view with the men and Gajanan holding the same regard.
+transition_out: cut

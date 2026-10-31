@@ -68,3 +68,12 @@ Owner decision (verbatim intent): keep test-quality blockers. Judge READY does n
 - Outputs regenerated: six media CSVs in work/phase1/departments_16/media. No held-out id appears; the held-out reference timestamps are PROTECTED (not UNMAPPED); 9.47.17 remains the only UNMAPPED row.
 - Still OPEN (scope decision): the key-gap exclusion is one-way. A beats key gap still leaves colour MEASURED and audio analysed Y; an audio key gap still leaves pacing statistics and caption rows. Opus recommends one shared key-gap check. Needs owner confirmation of scope.
 - Media loop state: review-open (the loop's own state; it was not re-run). Supervisor acceptance applies only to the three blockers above.
+
+## fc13_lessons and fc13_eval (2026-11-01, owner-bounded jobs: Haiku coder, review off, one external Codex review each)
+- Model calls: 4 in total (fc13_lessons: 1 Haiku + 1 Codex; fc13_eval: 1 Haiku + 1 Codex). Target 4, ceiling 8. No correction round used.
+- fc13_lessons Codex HIGH (preset_ids regex not token-bounded): NOT BLOCKING. Evidence: the delivered prompt_lines are asserted equal to the spec literals by the test and by a supervisor check; an independent token-bounded scan of the five lines finds only registered ids and no prefixed ids. Guard weakness for future edits only. Logged.
+- fc13_lessons Codex MED (L5 presets list not gain-checked): NOT BLOCKING. The spec asks for the text check only; the delivered L5 presets list is exactly 09, 05, 07, 10 (supervisor check). Logged.
+- fc13_lessons Codex MED (four-lesson test asserts any problem): test-strength note; no wrong output can pass (texts asserted exactly). Logged.
+- fc13_eval Codex HIGH (NameError, QUALITY_KEYS used before definition): FALSE POSITIVE. The name is used inside protocol() and resolved at call time; the module imports, protocol() runs, 14 tests pass.
+- fc13_eval Codex MED (mkdir of OUT_DIR): NOT A DEFECT. mkdir uses exist_ok on an existing folder; no extra file is written.
+- Spec lint: both specs lacked the mandatory OUTPUT FORMAT block; added after the runs (documentation only; module code and EVAL_PROTOCOL code hash unchanged).

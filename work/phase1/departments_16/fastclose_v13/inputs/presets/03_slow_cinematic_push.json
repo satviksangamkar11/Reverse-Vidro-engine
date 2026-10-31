@@ -1,0 +1,42 @@
+{
+  "shot_id": "SP",
+  "frames": 144,
+  "on_twos": false,
+  "backdrop": {
+    "top": "#F8E8C8",
+    "bottom": "#DDBB8E",
+    "floor_y": -0.43,
+    "floor_color": "#B99064"
+  },
+  "segments": [
+    {
+      "start": 1,
+      "end": 144,
+      "layers": [
+        {
+          "asset": "img",
+          "depth": 2,
+          "x": 0,
+          "y": 0,
+          "scale": 1.04
+        }
+      ],
+      "camera": {
+        "start": {
+          "x": 0,
+          "y": 0.0,
+          "zoom": 1.0
+        },
+        "end": {
+          "x": 0.0,
+          "y": 0.03,
+          "zoom": 1.2
+        },
+        "ease": "ease_in_out"
+      }
+    }
+  ],
+  "atmosphere": {
+    "vignette": 0.12
+  }
+}

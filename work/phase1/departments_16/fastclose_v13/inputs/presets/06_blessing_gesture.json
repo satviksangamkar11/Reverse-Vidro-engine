@@ -1,0 +1,72 @@
+{
+  "shot_id": "SP",
+  "frames": 144,
+  "on_twos": false,
+  "backdrop": {
+    "top": "#F8E8C8",
+    "bottom": "#DDBB8E",
+    "floor_y": -0.43,
+    "floor_color": "#B99064",
+    "halo": {
+      "x": 0.38,
+      "y": 0.08,
+      "radius": 0.55,
+      "color": "#FFD98A",
+      "intensity": 0.3,
+      "pulse_period_sec": 6
+    }
+  },
+  "segments": [
+    {
+      "start": 1,
+      "end": 144,
+      "layers": [
+        {
+          "asset": "pose",
+          "depth": 2,
+          "x": 0,
+          "y": 0,
+          "scale": 1.04,
+          "idle": {
+            "amplitude": 0.004,
+            "period_sec": 4.8
+          },
+          "move": {
+            "dx": 0.006,
+            "dy": 0,
+            "dscale": 0.004
+          },
+          "soft_warp": {
+            "u": 0.66,
+            "v": 0.4,
+            "radius": 0.2,
+            "start": 30,
+            "end": 110,
+            "rotate_deg": -10,
+            "dx": 0,
+            "dy": 0
+          }
+        }
+      ],
+      "camera": {
+        "start": {
+          "x": 0.16,
+          "y": 0.02,
+          "zoom": 1.12
+        },
+        "end": {
+          "x": 0.32,
+          "y": 0.1,
+          "zoom": 1.42
+        },
+        "ease": "ease_out"
+      }
+    }
+  ],
+  "atmosphere": {
+    "gloss": 0.3,
+    "warm_tint": "#FFC56B",
+    "dust": 0.12,
+    "vignette": 0.16
+  }
+}

@@ -1,0 +1,67 @@
+Scene S6, plan P1 (X13001c8)
+
+Goal: Show Bankatlal withdraw the mad judgment, recognize Gajanan's search for liberation and end further testing, then close on praise of Shegaon and its yogi.
+Turn: Bankatlal reverses the earlier verdict and tells Damodarpant that Gajanan must not be tested again.
+
+shot 1
+preset: 01_establishing_shot
+ovi_ids: A1:119
+action: Dollying toward the three men at Devidas's door
+held_pose: Bankatlal faces Damodarpant in held address while Gajanan remains seated beside the plate of mixed dishes.
+performance: Bankatlal admits the mistake directly to Damodarpant; Gajanan stays calm and silent.
+camera: Slow dolly in, keeping all three figures readable.
+staging: STAGING: Fill the foreground with the door edge and road, the middle with the three figures, and the rear with the named house setting.
+transition_out: cut
+dialogue: Calling him mad was certainly our great mistake.
+
+shot 2
+preset: 09_dialogue_composition
+ovi_ids: A1:120
+action: Drifting across Bankatlal and Damodarpant in their held exchange
+held_pose: Bankatlal continues facing Damodarpant, who holds a silent listening posture.
+performance: The admission carries into the Arjuna comparison without a separate story vision.
+camera: Gentle lateral drift across the two listeners and speaker.
+staging: STAGING: Keep both figures in the same door-side positions and dress as the preceding wide shot.
+transition_out: cut
+dialogue: To win Subhadra, Arjuna too behaved like a madman in Dwarka.
+
+shot 3
+preset: 03_slow_cinematic_push
+ovi_ids: A1:121
+action: Pushing toward Bankatlal as he holds his concluding address
+held_pose: Bankatlal faces Damodarpant with one open palm lowered, while Gajanan remains seated nearby.
+performance: The comparison resolves into a clear decision: this knower seeks liberation and needs no further test.
+camera: Slow push toward the speaking Bankatlal with Gajanan still visible.
+staging: STAGING: Let the lowered open palm mark the conclusion without adding a new event.
+transition_out: cut
+dialogue: This excellent knower is mad for liberation as Subhadra; do not test him again.
+
+shot 4
+preset: 02_environmental_parallax
+ovi_ids: A1:122
+action: Moving laterally through the layered Shegaon doorway view
+held_pose: Gajanan sits at the door while Bankatlal and Damodarpant remain turned toward him.
+performance: The narrator carries the unclear-speaker praise as the view presents Shegaon's yogi without a crown or radiance effect.
+camera: Lateral parallax from the visitors toward the seated yogi.
+staging: STAGING: Use house fronts and the road as layered scenery; add no symbolic estate, crown or divine light.
+transition_out: cut
+
+shot 5
+preset: 07_character_reaction
+ovi_ids: A1:122
+action: Breathing gently in Gajanan's held close-up
+held_pose: Gajanan holds a steady gaze and calm posture, with the old bandi and an edge of the door setting visible.
+performance: The close view emphasizes the yogi named in the continuing praise; desirelessness remains spoken, not visualized.
+camera: Close push with quiet breathing.
+staging: STAGING: Keep the close-up plain and restrained, with no added radiance or expression change.
+transition_out: cut
+
+shot 6
+preset: 01_establishing_shot
+ovi_ids: A1:122
+action: Dollying toward the full group as the praise concludes
+held_pose: The two visitors remain facing the seated Gajanan beside the door and the plate of mixed dishes.
+performance: The final wide view holds Shegaon, its visitors and the desireless yogi together in silence.
+camera: Slow closing dolly across the complete doorway composition.
+staging: STAGING: Restore the opening wide composition for a quiet conclusion without any new gesture or event.
+transition_out: cut

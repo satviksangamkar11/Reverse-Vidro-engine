@@ -1,0 +1,31 @@
+OWNER-APPROVED DIRECTION NOTES (canon constraints for Adhyay 1; binding):
+- Opening: exactly two shots. The year 1878 appears only as an on-screen caption (the owner's instruction; the Granth says 'within Shaka 1800s'); no day or month; do not invent a birthplace, childhood, parents or a journey into Shegaon; no Sajjangad, Samarth Ramdas or Nath-yogi material in the narration or the pictures.
+- Dress: a worn old bandi (88) and otherwise almost bare (digambar, 92), throughout; a self-made UNFIRED clay chilim (90) and a gourd (89). The sunrise comparison (91) is not a time-of-day instruction.
+- Show the 'food is Brahman' explanation (94-96) with the grain-picking action (93-94).
+- The visitors bow to him in silence at 112 (no spoken words); at 143 the men are only READY to fall at his feet.
+- Show the mixing of the dishes before he eats (118); keep both narrator comparisons (116-117).
+- Damodarpant (not Bankatlal) fetches the water: he enters Devidas's house (133) and returns with the gadva (135). The trough is beside the well; he belches with satisfaction (134-135); he is not stated to drink the water Damodarpant brings.
+- Keep his teaching complete (138-142) and do not shorten it to fit a six-second shot; at 144 he runs with NO destination.
+- Ovis 103-104, 113 and 122-124 keep their unclear speaker: do not give those words to a named person.
+- Narrator-only coverage: ovi 1-69, 106-107, 145-146.
+
+RENDERER CAPABILITIES (facts about what can be produced; do not ask for more)
+- One shot = exactly ONE render of 144 frames = 6 seconds at 24 fps. A scene is 2-16 shots (12-96 s); the narration timing says how many.
+- Pictures are owner-made flat-colour illustrations used as HELD POSES and layers. There is NO limb animation, NO walking cycle, NO lip-sync, NO facial-expression change inside a shot; only gentle breathing/sway, camera push/pan/parallax, and cuts between poses.
+- Every image_id starts with the scene prefix, "s<n>_" (e.g. s4_maharaj_seated); ids are never shared between scenes.
+- A different pose or expression needs a different image: declare it in "images_needed" and use it in another shot.
+- Each shot picks ONE of the presets listed (name exactly). Select presets using their supplied transforms, layer formats and fixed effects: the parameters are fixed, so do not invent zoom values and do not assume that prose can switch an effect off. If no preset matches the treatment the scene needs, use NEED_NEW. "assets" must contain EXACTLY the roles of that preset, each mapped to an image_id declared in "images_needed". An image_id is lowercase letters, digits and underscores, starting with a letter, at most 40 characters (e.g. "maharaj_seated_wide"); its description says who/where, pose and framing. Declare each image once and use every declared image in some shot. If no preset can show what the scene needs, use "preset": "NEED_NEW" with "need_new_reason" and "needs" naming what is missing (do not pretend a preset can do it); the code reports such a scene as UNRESOLVED.
+- Transitions between shots: cut | slide | pan_bridge only (no dissolves).
+
+REGISTERED PRESETS (the only presets that exist; fixed parameters):
+- 01_establishing_shot: Wide place-setting shot: 4 layers (sky far, mid subject, fx light, fg frame), 1.0->1.28 dolly. Needs: sky, mid, fx, fg. | image roles: fg, fx, mid, sky | FIXED zoom 1.00->1.28; fixed effects: gloss 0.45, dust 0.2, vignette 0.22, halo
+- 02_environmental_parallax: Lateral move through 4 depth layers (schema requires a zoom change >= 0.12 per shot). Needs: sky, far, mid, near. | image roles: far, mid, near, sky | FIXED zoom 1.00->1.13; fixed effects: gloss 0.25, dust 0.1, vignette 0.14
+- 03_slow_cinematic_push: One image, slow 1.0->1.2 push, no effects. SIMPLEST renderer: motion.py (CPU, ffmpeg). Needs: img. | image roles: img | FIXED zoom 1.00->1.20; fixed effects: vignette 0.12
+- 04_character_entrance: Character walks in toward a seated figure; camera pans with them. Needs: char (walking pose, transparent), other (seated pose, transparent). | image roles: char, other | FIXED zoom 1.00->1.14; fixed effects: gloss 0.3, dust 0.12, vignette 0.16, halo
+- 05_bowing_prayer: Bow / pranam: tilt down onto the contact point. Needs: pose (both figures, transparent). | image roles: pose | FIXED zoom 1.12->1.26; fixed effects: gloss 0.3, dust 0.12, vignette 0.16
+- 06_blessing_gesture: Raised-hand blessing pose with a slow push toward the hand. LIMIT: the soft warp only nudges an already-raised hand (measured ~1 grey level, not visible); a believable raise needs an extra pose image. Needs: pose (raised hand). | image roles: pose | FIXED zoom 1.12->1.42; fixed effects: gloss 0.3, dust 0.12, vignette 0.16, halo
+- 07_character_reaction: Close-up of a face with a slow push and breathing. Needs: face (close-up, transparent). | image roles: face | FIXED zoom 1.00->1.14; fixed effects: gloss 0.2, dust 0.05, vignette 0.2
+- 08_emotional_closeup: Slower, closer push with a soft halo for a quiet emotional beat. Needs: face (close-up, transparent). | image roles: face | FIXED zoom 1.00->1.25; fixed effects: gloss 0.3, dust 0.08, vignette 0.24, halo
+- 09_dialogue_composition: Two figures facing each other, gentle drift across them. Needs: left, right (transparent poses facing each other). No lip-sync. | image roles: left, right | FIXED zoom 1.00->1.13; fixed effects: gloss 0.3, dust 0.12, vignette 0.16
+- 10_object_hand_insert: Close-up insert of hands / an object. Needs: insert (full-frame close-up). | image roles: insert | FIXED zoom 1.04->1.18; fixed effects: gloss 0.25, dust 0.1, vignette 0.18
+- 11_scene_transition: Two scenes joined by a 6-frame pan bridge (no slow dissolve, so no ghosting). Needs: scene_a, scene_b. | image roles: scene_a, scene_b | FIXED zoom 1.00->1.00; fixed effects: gloss 0.2, dust 0.08, vignette 0.16
