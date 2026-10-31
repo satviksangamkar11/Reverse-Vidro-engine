@@ -1067,13 +1067,16 @@ def run_job(
                         _rp.write_text(_scrub(_rp.read_text(encoding="utf-8", errors="replace")), encoding="utf-8")
                 _judge_ready = False
                 _panel_verdicts = {_review_results.get(_rn, {}).get("verdict") for _rn in reviewers_list if reviewer.get(_rn) is not None}
-                if len({v for v in _panel_verdicts if v in ("READY", "FIX FIRST")}) > 1:   # owner 2026-10-31: reviews that disagree (READY vs FIX FIRST) go to the Haiku 5.5 tie-breaker, which decides: fix or move ahead; a NONE (timeout, error) is no review and blocks as before
+                _review_results = _review_results or {}
+                _valid_v = [_review_results.get(_rn, {}).get("verdict") for _rn in reviewers_list if reviewer.get(_rn) is not None]
+                _valid_v = [v for v in _valid_v if v in ("READY", "FIX FIRST")]          # owner 2026-10-31 (newest rule): an incomplete reply (NONE, truncated, timeout, error) is not counted
+                if len(set(_valid_v)) > 1 or len(_valid_v) == 1:   # owner 2026-10-31: reviews that disagree (READY vs FIX FIRST), and a single valid review, go to the Haiku 5.5 tie-breaker, which decides: fix or move ahead; zero valid reviews block as before
                     _judge_fn = (callers or {}).get("judge") or _haiku_cli_caller_factory()
                     _panel = []
                     for _rn in reviewers_list:
                         _rp = status_dir_job / f"review_{review_pass_count}_{_rn}.md"
                         _txt = _rp.read_text(encoding="utf-8", errors="replace") if _rp.is_file() else "(no report)"
-                        _panel.append("### Reviewer " + _rn + " (verdict " + str(_review_results.get(_rn, {}).get("verdict")) + ")" + chr(10) + _txt)
+                        _panel.append("### Reviewer " + _rn + " (verdict " + str((_review_results.get(_rn) or {}).get("verdict")) + ")" + chr(10) + _txt)
                     _files_text = chr(10).join("### FILE " + p.name + chr(10) + "```" + chr(10) + p.read_text(encoding="utf-8", errors="replace") + chr(10) + "```" for p in review_files_paths if p.is_file())
                     _judge_user = "Reviewer reports:" + chr(10) + chr(10) + (chr(10) + chr(10)).join(_panel) + chr(10) + chr(10) + "Files under review:" + chr(10) + chr(10) + _files_text
                     try:
@@ -1141,11 +1144,10 @@ def run_job(
                         any_missing = True
                 _valid = sum(1 for _r in rounds_record[-len(reviewers_list):] if str(_r.get("reason", "")).startswith(("verdict=READY", "verdict=FIX FIRST")))
                 _quorum = job.get("min_valid_reviews", 0) or len(reviewers_list)
-                if _judge_ready and not test_findings:
+                if _judge_ready and not test_findings:          # owner 2026-10-31: the judge clears FIX FIRST only; a missing required reviewer stays missing
                     any_fix_first = False
-                    any_missing = False
                     new_pending_reports = []
-                all_ready = (not any_fix_first) and (not test_findings) and (_judge_ready or _valid >= _quorum)          # default quorum = every reviewer; a lower min_valid_reviews tolerates NONE/timeouts
+                all_ready = (not any_fix_first) and (not test_findings) and ((_judge_ready and not any_missing) or _valid >= _quorum)          # owner 2026-10-31: the Haiku tie-breaker cannot pass a run with a missing required reviewer (P1-D24)          # default quorum = every reviewer; a lower min_valid_reviews tolerates NONE/timeouts
                 review_pass_count += 1
                 pending_review_reports = new_pending_reports
                 if all_ready:

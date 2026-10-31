@@ -51,7 +51,8 @@ RULES FOR EACH COLUMN:
 - sources_read: repo-relative paths actually read for that row, joined with ";". Always include the beat file (for non-held-out rows), the ledger path, and the audio file for dept 13, and STEP4_MEASUREMENTS.json for measured rows.
 - implemented_capability: "modules " + module ids + ": " + capability_text(...).
 - human_verified_items_count: 1 if the ledger human_verified_items cell is non-empty, else 0. This is copied only. It never changes evidence_type or research_status.
-- further_offline_analysis: "JUSTIFIED_NON_MODEL: <reason>" for dept 12 (brightness summary from media, if media exists), dept 13 (speech timing from the cached transcript when present), dept 14 (caption text already in observations), dept 15 (durations and rhythm from beat timings). For all other departments and all held-out rows: "NOT_JUSTIFIED_WITHOUT_HUMAN_OR_NEW_MODEL: <reason>". For depts 5 and 7 the reason is "frozen detector; Step 5 deferred; no re-run". Held-out rows: "NOT_ALLOWED: protected".
+- further_offline_analysis: "JUSTIFIED_NON_MODEL: <reason>" for dept 12 (brightness summary from media, if media exists), dept 13 (speech timing from the cached transcript when present), dept 14 (caption text already in observations), dept 15 (durations and rhythm from beat timings). For all other departments and all held-out rows: "NOT_JUSTIFIED_WITHOUT_HUMAN_OR_NEW_MODEL: <reason>". For depts 5 and 7 the reason is the evidence-status text, applied to EVERY row of depts 5 and 7 regardless of measured: "NOT_JUSTIFIED: frozen detector output exists only for 7434a0f7 and 7a1e2b26 (existing read-only measurement); no measurement exists for this video; Step 5 deferred; no re-run". Held-out rows: "NOT_ALLOWED: protected".
+The test must assert this exact text for every dept 5 and dept 7 row.
 - teachable_to_writer_director: by evidence_type: MEASUREMENT -> "measured camera or transition fact for this interval only; no meaning attached"; AI_OBSERVATION -> "AI reading of this video only; teach only after human verification"; TRANSCRIPT_UNVERIFIED -> "speech timing only; wording unverified"; NONE -> "nothing teachable from this record"; NONE_NOT_READ -> "none (protected)".
 - remaining_validation: "human verification of listed beats" for AI_OBSERVATION; "human check of meaning" for MEASUREMENT; "transcript verification" for TRANSCRIPT_UNVERIFIED; "new evidence or method required" for NONE; "protected; Step 5 only" for held-out rows.
 
@@ -68,7 +69,7 @@ TESTS for `pieces/test_d16_matrix.py` (pytest; the test file imports pieces/d16_
 3. load_beats raises ValueError for each held-out id.
 4. Every row whose ledger_category is NEVER_EXAMINED has research_status NOT_EXAMINED and observed_beat_count 0.
 5. For every non-held-out row, observed_beat_count equals the number of beats in the real beat file whose department_findings[str(dept)] contains an item with status OBSERVED (recompute in the test from the file; do not reuse build_rows output for this).
-6. measured is Y only for depts 5 and 7 and videos 7434a0f7 and 7a1e2b26.
+6. measured is Y for exactly four rows: depts 5 and 7 for videos 7434a0f7 and 7a1e2b26 (both keys must exist in STEP4_MEASUREMENTS.json; the test reads that file and asserts the set of measured (dept, video) pairs equals exactly those four pairs). Every other row has measured N.
 7. No row has research_status RESEARCH_COMPLETE_FROM_AVAILABLE_EVIDENCE.
 8. evidence_type values are only in {NONE_NOT_READ, MEASUREMENT, AI_OBSERVATION, TRANSCRIPT_UNVERIFIED, NONE}. No value equals HUMAN_VERIFIED.
 9. human_verified_items_count equals 1 exactly where the ledger's human_verified_items cell is non-empty.
@@ -77,6 +78,14 @@ TESTS for `pieces/test_d16_matrix.py` (pytest; the test file imports pieces/d16_
 12. Uncertainty handling: for dept 13 and video 5c93ec37 the row is BLOCKED_BY_SOURCE and its speech segment count is 0 in the real audio file (recompute in the test).
 
 REAL-DATA NOTE: tests must read the real files in the repository (not mocked data) for items 5, 6, 9, 10 and 12.
+
+VALIDATION RULES (amended 2026-10-31 after Codex spec review):
+- A ledger category outside {NEVER_EXAMINED, MODEL_ONLY, PARTIAL_MEASUREMENT, HUMAN_VERIFIED_PARTIAL, UNKNOWN, HELDOUT_PROTECTED} raises ValueError. It is never mapped silently.
+- A department_findings value that is not a list (or a missing key) is a missing-finding case, counted as missing; a non-list value raises ValueError. Never coerce a dict to its keys or a string to characters.
+- The measurements file STEP4_MEASUREMENTS.json is opened only inside the branch for a development video. build_rows must never open it while processing a held-out row, and must not read it before the loop over rows starts.
+- The write-location test snapshots the file list and modification times of work/phase1/ and of the evidence folder paths listed in sources_read before and after write_matrix, and asserts that the only new or changed file is the matrix CSV written to tmp_path.
+
+REVIEWER INPUT SIZE (amended 2026-10-31, owner decision): the Groq reviewer takes at most 18000 characters, including the review prompt. The module and test together must therefore stay SHORT: the module source at most 9000 characters and the test source at most 5000 characters. Achieve this by removing duplicate helper code, long docstrings and multi-line comments; keep one-line comments only. Do not remove any function listed in FUNCTIONS, and do not remove or weaken any test in TESTS.
 
 REPLY RULE: return the complete source of both files. Do not add any other text.
 REPLY PARSER TRAP: no line of any file you write may start with the letters F-I-L-E followed by a colon.

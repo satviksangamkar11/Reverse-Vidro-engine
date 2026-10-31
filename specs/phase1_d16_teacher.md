@@ -39,7 +39,7 @@ FIELDS of each candidate (all required):
 - eligibility: "NOT_ELIGIBLE (F4 unchanged; no verified creators; no recorded art style)".
 - practical_compatibility: "NOT_CHECKED_IN_THIS_RECORD (see PRODUCTION_EXECUTION_COMPATIBILITY.json)".
 
-LESSON FIELDS: for each lesson in the file: lesson_id, title, status (copied), technique_tags (copied), f4_status: "UNMAPPED (technique_tags is empty)", eligibility: "NOT_ELIGIBLE (candidate; not promoted)", and observed_events. Each observed event keeps video_id, beat_id, start_time, end_time, event, observation_level and evidence_refs copied verbatim, plus "distinct_video_count": 1 and "independent_creator_count": 0.
+LESSON FIELDS (amended 2026-10-31 after review): for each lesson in the file, start from a COPY of the source lesson dict, keeping EVERY source field unchanged (for example relations, inferred_intention, verification, title, status, technique_tags). Then set or override only these keys: f4_status, eligibility, and observed_events. f4_status is "UNMAPPED (technique_tags is empty)" when technique_tags is an empty list, and "MAPPING_NOT_ASSESSED (technique_tags present)" otherwise. eligibility is "NOT_ELIGIBLE (candidate; not promoted)". Each observed event is a copy of the source event with every source key kept, plus "distinct_video_count": 1 and "independent_creator_count": 0. Read event fields with dict.get(key) so that a missing key gives None and never raises.
 WITHDRAWN RULE (hard): the lesson whose lesson_id starts with "L4" has two observed events with beat_id "event_001" and "event_002" that the owner withdrew (no arm movement at 0.6-1.1 s and 6.7-6.9 s; the 2.27 s and 3.2 s snaps are not confirmed). For those two events set eligibility "WITHDRAWN_INACTIVE" and status_override "UNKNOWN_INACTIVE". They are kept, not deleted. Their text stays in the record.
 Do not change any other lesson field.
 
@@ -62,10 +62,12 @@ TESTS for `pieces/test_d16_teacher.py` (pytest; read the real files):
 5. Every candidate has independent_creator_count 0, distinct_video_count 1, verification_status AI_OBSERVATION_UNVERIFIED, and eligibility starting with NOT_ELIGIBLE.
 6. No eligibility value starts with "ELIGIBLE " or equals "ELIGIBLE".
 7. Lesson L4 events event_001 and event_002 have eligibility WITHDRAWN_INACTIVE and status_override UNKNOWN_INACTIVE; the text of their event field equals the lesson file's text.
-8. The lesson count is 7 and each lesson's observed_events list length equals the length in the source file.
-9. f4_reference counts match the F4 file (13 diagnoses, all EXPERIMENTAL).
+8. The lesson count equals the length of the source lessons list read from the real file, and each lesson's observed_events list length equals the length in the source file. Every source lesson field other than the three overridden keys is equal in the output (compare each source lesson with its output entry).
+9. f4_reference counts equal the counts recomputed from the real F4 file in the test (number of diagnoses, and the classification counts). No count or classification may be hard-coded in the test.
 10. build_output run twice gives identical JSON (determinism).
 11. write_output(root, tmp_path / "c.json") writes only that file under tmp_path.
+
+NO HARD-CODED FACTS IN TESTS (rule added 2026-10-31): every count, id list and classification in a test is recomputed from the real file inside the test. A test may hard-code only the field names and the rules of this spec.
 
 REPLY RULE: return the complete source of both files. Do not add any other text.
 REPLY PARSER TRAP: no line of any file you write may start with the letters F-I-L-E followed by a colon.
