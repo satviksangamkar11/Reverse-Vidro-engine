@@ -29,7 +29,7 @@ Contact sheet: REVIEW_CONTACT_SHEET.jpg (one frame from the middle of each evalu
 
 Verification (2026-10-31): every clip opened with ffprobe; each duration equals its extraction interval within one frame; each clip has a video and an audio stream; the frame at the start of the evaluated interval matches the source frame at that time (mean absolute difference under 0.3 on a 0-255 scale). The two zero-length beats have valid source frames (frame 0 and frame 270).
 
-Held-out videos (354a38a0, 37745d70, baf59433) are not included. No human-approved label is included.
+Protected held-out videos and beats are excluded from this review package. No human-approved label is included.
 
 ## SHA-256
 - R1_7434a0f7_B01_shot_001_0.0-0.0s_FLAG_ZERO_LENGTH.png: fd4cd72eb30e2bb7e9916203b18456298f5d78d63646cda76e34b6483d31fa31

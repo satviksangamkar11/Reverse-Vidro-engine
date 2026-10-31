@@ -17,3 +17,13 @@ raw_responses/
 stage/
 *.log
 *.bak*
+
+# standalone loop outputs
+_loop/*/
+_loop/*.log
+_loop/claim_*.json
+_loop/*.run.log
+_loop/key_ledger.*
+_loop/dead_*.mark
+_loop/*.lock
+_loop/preflight_ok.json
