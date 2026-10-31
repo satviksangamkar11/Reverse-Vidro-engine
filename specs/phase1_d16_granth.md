@@ -50,6 +50,10 @@ TESTS for `pieces/test_d16_granth.py` (pytest; read the real files; use tmp_path
 11. build_output run twice gives identical output (determinism).
 12. A symlink target is refused: if os.symlink is available, create a symlink named "link.json" under tmp_path / "work/phase1/departments_16" pointing to a file outside it, and assert write_output raises ValueError. Skip only if os.symlink raises OSError on this system.
 
+INDEPENDENT EXPECTATIONS (added 2026-10-31, owner decision: never derive expectations from module output):
+- Asset availability: for each preset and each asset, the test lists the real files in <gs_root>/assets/v5_presets and <gs_root>/assets/pilot_refs with os.listdir (no recursion) and computes found = any file equal to the asset name, or starting with asset + "." or asset + "_". The expected assets_available is True only when assets is non-empty and every asset is found. The test compares this with the module's asset_status and assets_available; the test does NOT read asset_status to compute its expectation.
+- Lesson fields: for every lesson, story_directing_guidance must equal the source lesson title followed by the text "candidate; not verified", and need must equal "UNKNOWN". Both are asserted exactly.
+- Consumer results: the test runs its own os.walk over <gs_root>/scripts and <gs_root>/src (skipping __pycache__ and .pyc files), finds every line containing "v5_presets", "index.json" or "preset", and asserts that the set of (file, line) pairs in the output equals this independently computed set exactly. An empty output is a failure.
 REAL-DATA NOTE: check each field name against the real files first. Open index.json and the F4 file in the test and assert the keys id, classification, executability, bucket, reasons, technique, preset, use, assets, simplest_renderer exist before relying on them.
 
 REPLY RULE: return the complete source of both files. Do not add any other text.
